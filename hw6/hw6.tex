@@ -35,6 +35,7 @@ gives the correct answer and terminates.
 \item
 Given two DFSMs $M_1$ and $M_2$, is $L(M_1) = L(M_2)^R$?
 \begin{proof}[Procedure]
+First, take $M_1$ and construct a new machine $M_1'$ as follows.  Create a new start state and provide epsilon transitions to every accepting state of $M_1$.  Then mark these states as non accepting and mark the old start state as accepting.  Now take every state transition and reverse it.  Now minimize $M_1'$ and $M_2$ and compare them.  If they are the same machine, then $L(M_1) = L(M_2)^R$ so return $True$.  Otherwise return $False$.
 \end{proof}
 \begin{proof}[Proof]
 \end{proof}
@@ -43,6 +44,7 @@ Given two DFSMs $M_1$ and $M_2$, is $L(M_1) = L(M_2)^R$?
 \item
 Given an FSM $M$ and a regular expression $\alpha$, is it true that $L(M)$ and $L(\alpha)$ are both finite and $M$ accepts exactly two more strings than $\alpha$ generates.
 \begin{proof}[Procedure]
+First, determine if $L(M)$ and $L(\alpha)$ are both finite.  For $M$, $L(M)$ is finite iff $M$ has no loops, and for $\alpha$, $L(\alpha)$ is finite iff $\alpha$ contains neither $*$ nor $+$.  Now, if both of them are finite, count all the strings each generates.  If $\card{L(M)} = 2 + \card{L(\alpha)}$ then return $True$, else return $False$.
 \end{proof}
 \begin{proof}[Proof]
 \end{proof}
@@ -72,8 +74,10 @@ $\{w \in \{0, 1, \#\}^*\ :\ w = x\#y$, where $x, y \in \{0, 1\}^*$ and $\card{x}
 \item
 $\{w \in \{1\}^*$ : $w$ is, for some $n \geq 1$, the unary encoding of $10^n\}$.  (So $L = \{1111111111,\ 1^{100},\ 1^{1000},\ \ldots\}$.)
 \begin{proof}[Answer]
+$False$.
 \end{proof}
 \begin{proof}[Proof]
+Let $w$ be $1^{10^k}$.  Then by the Pumping Theorem, $y = 1^p$ for some integer $p$ where $1 \leq p \leq k$.  Now pump out once to generate a new string $w' = 1^{10^k - p}$
 \end{proof}
 \end{enumerate}
 
