@@ -1,0 +1,318 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsfonts, amsthm, fullpage}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}   
+
+
+\begin{document}
+\begin{flushleft}
+\textbf{STUDENT NAME - EID \\
+CS 341 Automata Theory \\
+Homework 2 \\
+Due Thursday, Jan. 26}
+\end{flushleft}
+This assignment covers Chapters 2 - 4. \\
+
+\chtitle{2}
+
+\begin{enumerate}
+
+% ---
+% 2.1
+% ---
+
+\item
+Consider the language $L = \{1^n2^n: n > 0\}$.  Is the string $122$ in $L$?
+\begin{proof}[Answer:]
+\end{proof}
+
+% ---
+% 2.2
+% ---
+
+\item
+Let $L_1$ = $\{a^nb^n: n > 0\}$.  Let $L_2 = \{c^n: n > 0\}$.  For each of the following strings, state whether or not it is an element of $L_1L_2$:
+\begin{enumerate}
+
+%a
+\item
+$\epsilon$.
+\begin{proof}[Answer:]
+\end{proof}
+
+%b
+\item
+$aabbcc$.
+\begin{proof}[Answer:]
+\end{proof}
+
+%c
+\item
+$abbcc$.
+\begin{proof}[Answer:]
+\end{proof}
+
+%d
+\item
+$aabbcccc$.
+\begin{proof}[Answer:]
+\end{proof}
+\end{enumerate}
+
+% ---
+% 2.3
+% ---
+
+\item
+Let $L_1 = \{peach, apple, cherry\}$ and $L_2 = \{pie, cobbler, \epsilon\}$.  List the elements of $L_1L_2$ in lexicographic order.
+\begin{proof}[Answer:]
+\end{proof}
+
+% ---
+% 2.4
+% ---
+
+\item
+* Let $L = \{w \in \{a, b\}^* : \card{w} \equiv _3 0\}$.  List the first six elements in a lexicographic enumeration of $L$.
+\begin{proof}[Answer:]
+\end{proof}
+
+% ---
+% 2.5
+% ---
+
+\item
+Consider the language $L$ of all strings drawn from the alphabet $\{a, b\}$ with at least two different substrings of length 2.
+\begin{enumerate}
+
+%a
+\item
+Describe $L$ by writing a sentence of the form $L = \{w \in \Sigma ^* : P(w)\}$, where $\Sigma$ is a set of symbols and $P$ is a first-order logic formula.  You may use the function $\card{s}$ to return the length of $s$.  You may use all the standard relational symbols (e.g., $=$,  $\neq$, $<$, etc.), plus the predicate  $Substr(s,  t)$, which is $True$ iff $s$ is a substring of $t$.
+\begin{proof}[Answer:]
+\end{proof}
+
+%b
+\item
+List the first six elements of a lexicographic enumeration of $L$.
+\begin{proof}[Answer:]
+\end{proof}
+\end{enumerate}
+
+% ---
+% 2.6
+% ---
+
+\item
+* For each of the following languages $L$, give a simple English description of $L$.  Show two strings that are in $L$ and two that are not (unless there are fewer than two strings in $L$ or two not in $L$, in which case show as many as possible).
+\begin{enumerate}
+
+%a
+\item
+$L = \{w \in \{a, b\}^*$ : exactly one prefix of $w$ ends in $a\}$. 
+\begin{proof}[Answer:]
+\end{proof}
+
+%b
+\item
+$L = \{w \in \{a, b\}^*$ : all prefixes of $w$ end in $a\}$.
+\begin{proof}[Answer:]
+\end{proof}
+
+%c
+\item
+$L = \{w \in \{a, b\}^*$ : $\exists x \in \{a, b\}^+ (w = axa)\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\end{enumerate}
+
+% ---
+% 2.7
+% ---
+
+\item
+Are the following sets closed under the following operations?  If not, what are their respective closures?
+\begin{enumerate}
+
+%a
+\item
+The language $\{a, b\}$ under concatenation.
+\begin{proof}[Answer:]
+\end{proof}
+
+%b
+\item
+The odd length strings over the alphabet $\{a, b\}$ under Kleene star.
+\begin{proof}[Answer:]
+\end{proof}
+
+%c
+\item
+$L = \{w \in \{a, b\}^*\}$ under reverse.
+\begin{proof}[Answer:]
+\end{proof}
+
+%d
+\item
+$L = \{w \in \{a, b\}^*$ : $w$ starts with $a\}$ under reverse.
+\begin{proof}[Answer:]
+\end{proof}
+
+%e
+\item
+$L = \{w \in \{a, b\}^*$ : $w$ ends in $a\}$ under concatenation.
+\begin{proof}[Answer:]
+\end{proof}
+\end{enumerate}
+\end{enumerate}
+ 
+\chtitle{3}
+\begin{enumerate}
+\addtocounter{enumi}{1}
+
+% ---
+% 3.2
+% ---
+
+\item
+Consider the optical character recognition (OCR) problem: Given an array of black and white pixels, and a set of characters, determine which character best matches the pixel array. Formulate this problem as a language recognition problem.
+\begin{proof}[Answer:]
+\end{proof}
+
+% ---
+% 3.3
+% ---
+
+\item
+Consider the language $A^nB^nC^n = \{a^nb^nc^n: n \geq 0\}$, discussed in Section 3.3.3.  We might consider the following design for a PDA to accept $A^nB^nC^n$:  As each $a$ is read, push two $a$'s onto the stack.  Then pop one $a$ for each $b$ and one $a$ for each $c$.  If the input and the stack both become empty, accept.  Otherwise reject.  Why doesn’t this 
+work?
+\begin{proof}[Answer:]
+\end{proof}
+
+% ---
+% 3.4
+% ---
+
+\item
+* Define a PDA-2 to be a PDA with two stacks (instead of one).  Assume that the stacks can be manipulated independently and that the machine accepts iff it is in an accepting state and both stacks are empty when it runs out of input.  Describe the operation of a PDA-2 that accepts $A^nB^nC^n = \{a^nb^nc^n : n \geq 0\}$.  (Note: we will see, in Section 17.5.2, that the PDA-2 is equivalent to the Turing machine in the sense that any language that can be 
+accepted by one can be accepted by the other.)
+\begin{proof}[Answer:]
+\end{proof}
+\end{enumerate}
+
+
+\chtitle{4}
+\begin{enumerate}
+
+% ---
+% 4.1
+% ---
+
+\item
+Given a Java program $p$ and the input $0$, consider the question,``Does $p$ ever output anything?''
+\begin{enumerate}
+
+%a
+\item
+Describe a semidecision procedure that answers this question.
+\begin{proof}[Answer:]
+\end{proof}
+
+%b
+\item
+Is there an obvious way to turn your answer to part (a) into a decision procedure?
+\begin{proof}[Answer:]
+\end{proof}
+\end{enumerate}
+
+% ---
+% 4.2
+% ---
+
+\item
+Let $L = \{w \in \{a, b\}^*: w = w^R\}$.  What is $chop(L)$? 
+\begin{proof}[Answer:]
+\end{proof}
+
+% ---
+% 4.3
+% ---
+
+\item
+Are the following sets closed under the following operations?  Prove your answer.  If a set is not closed under the operation, what is its closure under the operation?
+
+\begin{enumerate}
+
+%a
+\item
+* The odd length strings over the alphabet $\{a, b\}$ under concatenation.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}
+\end{proof}
+
+%b
+\item
+$L = \{w \in \{a, b\}^* : w ends in a\}$ under the function odds, defined on strings as follows: $odds(s)$ = the string that is formed by concatenating together all of the odd numbered characters of $s$.  (Start numbering the characters at 1.)  For example, $odds(ababbbb) = aabb$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}
+\end{proof}
+
+%c
+\item
+FIN (the set of finite languages) under the function $oddsL$, defined on languages as follows: $oddsL(L) = \{w : \exists x \in L (w = odds(x))\}$ 
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}
+\end{proof}
+
+%d
+\item
+* INF (the set of infinite languages) under the function $oddsL$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}
+\end{proof}
+
+%e
+\item
+FIN under the function $maxstring$, defined in Example 8.22.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}
+\end{proof}
+
+%f
+\item
+INF under the function $maxstring$. 
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}
+\end{proof}
+\end{enumerate}
+
+% ---
+% 4.4
+% ---
+
+\item
+Describe a program, using choose, to do one of the following, or select another interesting puzzle and do this problem with it:
+\begin{enumerate}
+
+%a
+\item
+Play Sudoku.
+
+%b
+\item
+Solve Rubik's Cube \textregistered .
+\end{enumerate}
+\begin{proof}[Answer:]
+\end{proof}
+\end{enumerate}
+\end{document}
