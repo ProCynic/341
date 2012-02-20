@@ -10,10 +10,11 @@
 \newcommand{\images}{/home/gparker/classes/341/images}
 
 \begin{document}
+
 \begin{flushleft}
 \textbf{\noindent
 CS 341 Automata Theory \\
-STUDENT NAME - EID \\
+Geoffrey Parker - grp352 \\
 Homework 5 \\
 Due Tuesday, February 14}\\
 \end{flushleft}
@@ -34,50 +35,64 @@ For each of the following languages $L$, state whether or not $L$ is regular.  P
 \item
 $\{a^ib^j$ : $i, j \geq 0$ and $i + j = 5\}$.
 \begin{proof}[Answer:]
+Regular.
 \end{proof}
 \begin{proof}[Proof:]
+Since $i$ and $j$ are both greater than or equal to 0, there are a finite number of possibilites for $i$ and $j$ that satisfy $i + j = 5$.  Therefore this language is finite, and thus regular.
 \end{proof}
 
 %b
 \item
 $\{a^ib^j$ : $i, j \geq 0$ and $i - j = 5\}$.
 \begin{proof}[Answer:]
+Not Regular.
 \end{proof}
 \begin{proof}[Proof:]
+This will be a proof by the Pumping Theorem for Regular Languages.  Let $w = a^kb^{k+5} = xyz$ for some integer $k$.  Then $y$ must be $a^p$ for some integer $p$ where $0 < p \leq k$.  So the new string $w' = xy^0z$ will be $a^{k-p}b^{k+5}$, and since $p \neq 0$, $w'$ is not in the language.  Therefore this language is not regular.
 \end{proof}
 
 %c
 \item
 $\{w = xy$ : $x, y \in \{a, b\}^*$ and $\card{x} = \card{y}$ and $\#_a(x) \geq \#_a(y)\}$.
 \begin{proof}[Answer:]
+Regular.
 \end{proof}
 \begin{proof}[Proof:]
+If $y = \epsilon$, it is always the case that $\#_a(x) \geq \#_a(y)$, no matter what $x$ is.
 \end{proof}
 
 %d
 \item
 $\{w = xyzy^Rx$ : $x, y, z \in \{a, b\}^*\}$.
 \begin{proof}[Answer:]
+Regular.
 \end{proof}
 \begin{proof}[Proof:]
+Like the preceding language, this language is equivalent to $(a \cup b)^*$.  You can simply let $x$ and $y$ be $\epsilon$, and let $z$ be the whole string.
 \end{proof}
 
 %e
 \item
-$\{w = xyzy$ : $x, y, z \in \{0, 1\}^*\}$.
+$\{w = xyzy$ : $x, y, z \in \{0, 1\}^+\}$.
 \begin{proof}[Answer:]
+Regular.
 \end{proof}
 \begin{proof}[Proof:]
+This language is described by the regular expression: $((0 \cup 1)^+0(0 \cup 1)^+0) \cup ((0 \cup 1)^+1(0 \cup 1)^+1)$.
+
 \end{proof}
 
 %f
 \item
 $\{w \in \{0, 1\}^* : \#_0(w) \neq \#_1(w)\}$.
 \begin{proof}[Answer:]
+Not Regular.
 \end{proof}
 \begin{proof}[Proof:]
+Let $L = \{w \in \{0, 1\}^* : \#_0(w) \neq \#_1(w)\}$.  If $L$ was regular, then its complement $L^c$ would be regular as well.  Let $w = 0^k1^k = xyz$ for some integer $k$.  We can see that $w \in L^c$.  Then $y$ must be $0^p$ for some integer $p$ where $0 < p \leq k$.  So the new string $w' = xy^0z$ will be $0^{k-p}b^k$, and since $p \neq 0$, $w'$ is not in $L^c$.  Therefore by the Pumping Theorem, $L^c$ is not regular, and thus $L$ is not regular.
 \end{proof}
 
+\pagebreak
 %g
 \item
 * $\{w \in \{a, b\}^* : \exists x \in \{a, b\}^+\ (w = xx^Rx)\}$
@@ -90,24 +105,30 @@ $\{w \in \{0, 1\}^* : \#_0(w) \neq \#_1(w)\}$.
 \item
 $\{w \in \{a, b\}^*$ : the number of occurrences of the substring \texttt{ab} equals the number of occurrences of the substring \texttt{ba}\}.
 \begin{proof}[Answer:]
+Regular.
 \end{proof}
 \begin{proof}[Proof:]
+This language is described by the regular expression: $\epsilon \cup a^+(b^+a^+)^* \cup b^+(a^+b^+)^*$.
 \end{proof}
 
 %i
 \item
 * $\{w: w \in \{a – z\}^*$ and the letters of $w$ appear in reverse alphabetical order\}.  For example, \texttt{spoonfeed} $\in L$.
 \begin{proof}[Answer:]
+Regular.
 \end{proof}
 \begin{proof}[Proof:]
+Big honkin fsm with one state for each letter from z to a and one transition from each state to all subsequent states.
 \end{proof}
 
 %j
 \item
 $L_0^*$, where $L_0 = \{ba^ib^ja^k,\ j \geq 0,\ 0 \leq i \leq k\}$.
 \begin{proof}[Answer:]
+Regular.
 \end{proof}
 \begin{proof}[Proof:]
+$L_0^*$ is represented by the regular expression $(ba^*)^*$
 \end{proof}
 \end{enumerate}
 
@@ -122,16 +143,20 @@ For each of the following languages $L$, state whether $L$ is regular or not and
 \item
 $\{uww^Rv$ : $u, v, w \in \{a, b\}^+\}$.
 \begin{proof}[Answer:]
+Regular.
 \end{proof}
 \begin{proof}[Proof:]
+This language is represented by the regular expression: $(a \cup b)^+(aa \cup bb)(a \cup b)^+$.  Everything except one character of $w$ can be absorbed into $u$ and $v$.
 \end{proof}
 
 %b
 \item
 $\{xyzy^Rx\ :\ x, y, z \in \{a, b\}^+\}$.
 \begin{proof}[Answer:]
+Regular.
 \end{proof}
 \begin{proof}[Proof:]
+This language can be represented by the regular expression: \\$((a \cup b)^+a(a \cup b)^+a(a \cup b)^+) \cup ((a \cup b)^+b(a \cup b)^+b(a \cup b)^+)$
 \end{proof}
 \end{enumerate}
 
@@ -143,6 +168,7 @@ $\{xyzy^Rx\ :\ x, y, z \in \{a, b\}^+\}$.
 \item
 Use the Pumping Theorem to complete the proof, given in Chapter L.3.1, that English isn’t regular.
 \begin{proof}[Proof:]
+Can't even figure out what this question is asking.
 \end{proof}
 
 % ---
@@ -157,12 +183,15 @@ Prove by construction that the regular languages are closed under:
 \item
 intersection.
 \begin{proof}[Proof:]
+Let $L_1$ and $L_2$ be regular languages and let $L_3 = L_1 \cap L_2$.  Then $L_3$ may be rewritten as $(L_1^c \cup L_2^c)^c$ using De Morgan's law.  Since we already know that the regular languages are closed under both complement and union, this means that $L_3$ is regular.
 \end{proof}
  
+\pagebreak
 %b
 \item
 * set difference.
 \begin{proof}[Proof:]
+Let $L_1$ and $L_2$ be regular languages and let $L_3 = L_1 - L_2$.  Then $L_3$ may be rewritten as $(L_1 \cap L_2^c)^c$.  Since we already know that the regular languages are closed under both complement and intersection, this means that $L_3$ is regular.
 \end{proof}
 \end{enumerate}
 
@@ -176,12 +205,14 @@ Prove that the regular languages are closed under each of the following operatio
 \item
 $pref(L) = \{w: \exists x \in \Sigma ^*\ (wx \in L)\}$.
 \begin{proof}[Proof:]
+Let $L$ be a regular language.  Then there is some machine $M$ that recognizes $L$.  Now construct a machine $M'$ by finding all states which are on a path from the start state to an accepting state and making them accepting.  So $M'$ recognizes $pref(L)$.  Therefore $pref(L)$ is regular.
 \end{proof}
 
 %b
 \item
 $suff(L) = \{w: \exists x \in \Sigma ^*\ (xw \in L)\}$.
 \begin{proof}[Proof:]
+Let $L$ be a regular language.  Then there is some machine $M$ that recognizes $L$.  Now construct a new machine $M'$ from $M$ by introducing a new start state and providing epsilon transitions to all of the states on any path from the original start state to any accepting state. So $M'$ recognizes $suff(L)$.  Therefore $pref(L)$ is regular.
 \end{proof}
 \end{enumerate}
 
@@ -199,30 +230,35 @@ following languages:
 \item
 $maxstring(A^nB^n)$.
 \begin{proof}[Answer:]
+$A^nB^n$.
 \end{proof}
 
 %b
 \item
 $maxstring(a^ib^jc^k, 1 \leq k \leq j \leq i)$.
 \begin{proof}[Answer:]
+$\{a^ib^jc^k, 1 \leq k = j \leq i\}$
 \end{proof}
 
 %c
 \item
 $maxstring(L_1L_2)$, where $L_1 = \{w \in \{a, b\}^*$ : $w$ contains exactly one $a$\} and $L_2 = \{a\}$.
 \begin{proof}[Answer:]
+$L_1L_2$
 \end{proof}
 
 %d
 \item
 $mix((aba)^*)$.
 \begin{proof}[Answer:]
+$(abaaba)^*$
 \end{proof}
 
 %e
 \item
 $mix(a^*b^*)$.
 \begin{proof}[Answer:]
+$\{a^nb^ka^{n-k}\ :\ 0 \leq k \leq n\}$.
 \end{proof}
 \end{enumerate}
 
@@ -238,16 +274,21 @@ Define the function $midchar(L) = \{c : \exists w \in L\ (w = ycz, c \in \Sigma 
 \item
 Are the regular languages closed under $midchar$?  Prove your answer.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 \begin{proof}[Proof:]
+Let $L$ be a regular language.  Since $c \in \Sigma$, we know that $\card{midChar(L)} \leq \Sigma _L$.  Therefore $midChar(L)$ is finite, and thus regular.
 \end{proof}
 
+\pagebreak
 %b
 \item
 Are the nonregular languages closed under $midchar$?  Prove your answer.
 \begin{proof}[Answer:]
+No. (Assuming the set of nonregular languages is not defined as a superset of the regular languages.)
 \end{proof}
 \begin{proof}[Proof:]
+Let $L$ be a nonregular language.  Since $c \in \Sigma$, we know that $\card{midChar(L)} \leq \Sigma _L$.  Therefore $midChar(L)$ is finite, and thus regular.
 \end{proof}
 \end{enumerate}
 
@@ -257,55 +298,68 @@ Are the nonregular languages closed under $midchar$?  Prove your answer.
 \item
 Define the function $shuffle(L) = \{w : \exists x \in L$ ($w$ is some permutation of $x$)\}.  For example, if $L = \{ab,\ abc\}$, then $shuffle(L) = \{ab,\ abc,\ ba,\ acb,\ bac,\ bca,\ cab,\ cba\}$.  Are the regular languages closed under $shuffle$?  Prove your answer.
 \begin{proof}[Answer:]
+No.
 \end{proof}
 \begin{proof}[Proof:]
+Let $L$ be $(ab)^*$.  Then $shuffle(L) = \{w \in \{a, b\}^*\ :\ \#_a(w) = \#_b(w)\}$, which I will prove is not regular.  Let $w = a^kb^k$, so $w \in shuffle((ab)^*)$.  Then by the constraints of the pumping theorem, $y$ must equal $a^p$ for some integer $p$ such that $1 \leq p \leq k$.  Then by pumbing out, the number of $a$'s and $b$'s is no longer equal, so $shuffle((ab)^*)$ is not regular.
 \end{proof}
 
 % ---
 % 9
 % ---
 \item
-Consider any function $f(L_1) = L_2$, where $L_1$ and $L_2$ are both languages over the alphabet $\Sigma = \{0, 1\}$.  We say that function $f$ is \textit{nice} iff  $L_2$ is regular iff $L_1$ is regular.  For each of the following functions, state whether or not it is nice and prove your answer:
+Consider any function $f(L_1) = L_2$, where $L_1$ and $L_2$ are both languages over the alphabet $\Sigma = \{0, 1\}$.  We say that function $f$ is \textbf{\textit{nice}} iff  $L_2$ is regular iff $L_1$ is regular.  For each of the following functions, state whether or not it is nice and prove your answer:
 
 \begin{enumerate}[a)]
 %a
 \item
 $f(L) = L^R$.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 \begin{proof}[Proof:]
+If $L_1$ is regular, then by the fact that the regular languages are closed under reverse, $L_2$ is regular.  If $L_2$ is regular, then $L_1 = L_1^{RR} = L_2^R$ is regular as well.
 \end{proof}
 
 %b
 \item
 $f(L)  =  \{w:\ w$ is formed by taking a string in $L$ and replacing all  \texttt{1}'s with  \texttt{0}'s and leaving the  \texttt{0}'s unchanged\}.
 \begin{proof}[Answer:]
+No.
 \end{proof}
 \begin{proof}[Proof:]
+Let $L = 0^n1^n$, which is not regular.  Then $f(L) = 0^{2n}$, which is regular.  Therefore $f$ is not nice.
 \end{proof}
 
 %c
 \item
 $f(L) = L \cup 0^*$
 \begin{proof}[Answer:]
+No.
 \end{proof}
 \begin{proof}[Proof:]
+Let $L = \{0^p\ :\ p$ is prime.\}, which is not regular.  Then $f(L) = 0^*$, which is regular.  Therefore $f$ is not nice.
 \end{proof}
 
 %d
 \item
 $f(L)  =  \{w:\ w$ is formed by taking a string in $L$ and replacing all \texttt{1}'s with  \texttt{0}'s and all  \texttt{0}'s with  \texttt{1}'s (simultaneously)\}.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 \begin{proof}[Proof:]
+If $L$ is regular, then $f(L)$ is also regular because the regular languages are closed under string substitution.  If $f(L)$ is regular, then $L$ is also regular, because $L = f(f(L))$.
 \end{proof}
 
+\pagebreak
 %e
 \item
 $f(L) = \{w: \exists x \in L\ (w = x\texttt{00})\}$.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 \begin{proof}[Proof:]
+We can state equivalently that $f(L) = L\{\texttt{00}\}$.  So if $L$ is regular, then $f(L)$ is also regular, because the regular languages are closed under concatenation.  And if $f(L)$ is regular, then $L$ is regular, becuase $L \subseteq prefix(f(L))$.
 \end{proof}
 \end{enumerate}
 
@@ -315,7 +369,9 @@ $f(L) = \{w: \exists x \in L\ (w = x\texttt{00})\}$.
 
 \item
 Consider the language $L = \{x\texttt{0}^ny\texttt{1}^nz\ :\ n \geq 0, x \in P, y \in Q, z \in R\}$, where $P$, $Q$, and $R$ are nonempty sets over the alphabet $\{0, 1\}$.  Can you find regular languages $P$, $Q$, and $R$ such that $L$ is not regular?  Can you find regular languages $P$, $Q$, and $R$ such that $L$ is regular?
-\begin{proof}[Solution:]
+\begin{proof}[Solution:]$ $\\
+To make $L$ nonregular, let $P = \{\epsilon\}$, $Q = \{\epsilon\}$, and $R = \{\epsilon\}$.\\
+To make $L$ regular, let $P = 0^*$, $Q = \{\epsilon\}$, and $R = 1^*$.
 \end{proof}
 \end{enumerate}
 \end{document}
