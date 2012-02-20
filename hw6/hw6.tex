@@ -1,0 +1,176 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsfonts, amsthm, amsmath, fullpage, tikz, wrapfig, enumerate}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
+\newcommand{\images}{/home/gparker/classes/341/images}
+
+\begin{document}
+\begin{center}
+\textbf{
+CS 341 Automata Theory \\
+Elaine Rich \\
+Homework 6 \\
+Due: Tuesday, February 21}\\
+\end{center}
+\noindent
+This assignment covers Chapter 9 and a review of regular languages. \\
+
+\noindent
+\textbf{Chapter 9}
+\begin{enumerate}[1)]
+% ---
+% 1
+% ---
+
+\item
+Define a decision procedure for each of the following questions.  Argue that each of your decision procedures 
+gives the correct answer and terminates.
+\begin{enumerate}[a)]
+%a
+\item
+Given two DFSMs $M_1$ and $M_2$, is $L(M_1) = L(M_2)^R$?
+\begin{proof}[Procedure]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%b
+\item
+Given an FSM $M$ and a regular expression $\alpha$, is it true that $L(M)$ and $L(\alpha)$ are both finite and $M$ accepts exactly two more strings than $\alpha$ generates.
+\begin{proof}[Procedure]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+\end{enumerate}
+\end{enumerate}
+
+\noindent
+\textbf{Review}
+\begin{enumerate}[1)]
+\setcounter{enumi}{1}
+% ---
+% 2
+% ---
+
+\item
+For each of the following languages $L$, state whether or not $L$ is regular. Prove your answer.
+\begin{enumerate}[a)]
+%a
+\item
+$\{w \in \{0, 1, \#\}^*\ :\ w = x\#y$, where $x, y \in \{0, 1\}^*$ and $\card{x}\cdot \card{y} \equiv _5 0\}$.  (Let $\cdot$ mean integer multiplication).
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%b
+\item
+$\{w \in \{1\}^*$ : $w$ is, for some $n \geq 1$, the unary encoding of $10^n\}$.  (So $L = \{1111111111,\ 1^{100},\ 1^{1000},\ \ldots\}$.)
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+\end{enumerate}
+
+
+% ---
+% 3
+% ---
+
+\item
+Define a \textbf{color word} to be an English word that is the name of a color.  So some example color words are \texttt{red}, \texttt{fuschia}, and \texttt{ochre}.  Define an \textbf{animal word} to be an English word that is the common name of an animal.  So some example animal words are \texttt{cow}, \texttt{cats}, and \texttt{hippopotamus}.  Let $L = \{w$ : $w$ is a sentence with legal English syntax and the number of color words in $w$ equals the number of animal words in $w\}$.  As examples, observe that \texttt{red cats like catnip} $\in L$, but \texttt{red cats like blue green balls} $\not \in L$.  Note that, to be in $L$, $w$ must satisfy the syntactic rules of English.  It is not necessary for $w$ to make sense.  So, for example, \texttt{red red blue red cats like dogs and dogs and dogs} $\in L$.  Prove that $L$ is not regular.  (Be particularly careful if you use the Pumping Theorem.  You must choose a $w$ that is actually in $L$.)
+\begin{proof}[Proof]
+\end{proof}
+
+
+% ---
+% 4
+% ---
+
+\item
+In this problem, we consider a very restricted subset of Boolean expressions.  Define an \textbf{operator} to be one of the four symbols: $\lnot$, $\land$, $\lor$, and $\rightarrow$.  Define a variable to be one of the five symbols: \texttt{P, Q, R, S} and \texttt{T}.  Let $L = \{w$ : $w$ is a syntactically legal Boolean expression \textit{without parentheses} and the number of operators in $w$ is exactly equal to the number of variables in $w\}$.  Examples:
+\begin{center}
+\begin{tabular}{l@{\hspace{1cm}}l}
+$\lnot P \rightarrow Q$ &is in $L$.\\
+$P \land R \land \lnot S \rightarrow R$ & is in $L$.\\
+$P \rightarrow Q$ & is not in $L$.\\
+$\lnot \lnot P$ & is not in $L$.
+\end{tabular}
+\end{center}
+
+Is L regular?  Prove your answer.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+
+% --
+% 5
+% --
+\item
+For each of the following claims, state whether it is $True$ or $False$.  Prove your answer.
+\begin{enumerate}[a)]
+%a
+\item
+If $L = L_1L_2$ and $L$ is regular then $L_1$ and $L_2$ must be regular.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%b
+\item
+$(\lnot (\lnot L)$ is regular) $\rightarrow$ ($L$ is regular).
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%c
+\item
+$(L_1 - L_2$ is regular) $\rightarrow$ ($L_1$ is regular).
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%d
+\item
+$(L^R$ is regular) $\rightarrow$ ($L$ is regular).
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%e
+\item
+For any language $L$, $L \cup \{a^nb^n\ :\ n \geq 0\}$ must not regular.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%f
+\item
+Given any language $L$, it cannot be true that $L - \{a^nb^n\ :\ n \geq 0\}$ is regular.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%g
+\item
+The finite languages are closed under Kleene star.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+\end{enumerate}
+\end{enumerate}
+\end{document}
