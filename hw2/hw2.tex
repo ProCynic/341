@@ -11,7 +11,7 @@
 
 \begin{document}
 \begin{flushleft}
-\textbf{STUDENT NAME - EID \\
+\textbf{Geoffrey Parker - grp352 \\
 CS 341 Automata Theory \\
 Homework 2 \\
 Due Thursday, Jan. 26}
@@ -29,6 +29,7 @@ This assignment covers Chapters 2 - 4. \\
 \item
 Consider the language $L = \{1^n2^n: n > 0\}$.  Is the string $122$ in $L$?
 \begin{proof}[Answer:]
+No.
 \end{proof}
 
 % ---
@@ -43,24 +44,28 @@ Let $L_1$ = $\{a^nb^n: n > 0\}$.  Let $L_2 = \{c^n: n > 0\}$.  For each of the f
 \item
 $\epsilon$.
 \begin{proof}[Answer:]
+No.
 \end{proof}
 
 %b
 \item
 $aabbcc$.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 
 %c
 \item
 $abbcc$.
 \begin{proof}[Answer:]
+No.
 \end{proof}
 
 %d
 \item
 $aabbcccc$.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 \end{enumerate}
 
@@ -71,6 +76,7 @@ $aabbcccc$.
 \item
 Let $L_1 = \{peach, apple, cherry\}$ and $L_2 = \{pie, cobbler, \epsilon\}$.  List the elements of $L_1L_2$ in lexicographic order.
 \begin{proof}[Answer:]
+$apple,\ cherry,\ peach,\ applecobbler,\ applepie,\ cherrycobbler,\ cherrypie,\ peachcobbler,\ peachpie$.
 \end{proof}
 
 % ---
@@ -80,8 +86,11 @@ Let $L_1 = \{peach, apple, cherry\}$ and $L_2 = \{pie, cobbler, \epsilon\}$.  Li
 \item
 * Let $L = \{w \in \{a, b\}^* : \card{w} \equiv _3 0\}$.  List the first six elements in a lexicographic enumeration of $L$.
 \begin{proof}[Answer:]
+$\epsilon,\ aaa,\ aab,\ aba,\ abb,\ baa$ 
 \end{proof}
 
+
+\pagebreak
 % ---
 % 2.5
 % ---
@@ -94,12 +103,14 @@ Consider the language $L$ of all strings drawn from the alphabet $\{a, b\}$ with
 \item
 Describe $L$ by writing a sentence of the form $L = \{w \in \Sigma ^* : P(w)\}$, where $\Sigma$ is a set of symbols and $P$ is a first-order logic formula.  You may use the function $\card{s}$ to return the length of $s$.  You may use all the standard relational symbols (e.g., $=$,  $\neq$, $<$, etc.), plus the predicate  $Substr(s,  t)$, which is $True$ iff $s$ is a substring of $t$.
 \begin{proof}[Answer:]
+$L = \{w \in \{a, b\}^* : \exists a\ \exists b (Substr(a, w) \land Substr(b, w) \land \card{a} = 2 \land \card{b} = 2 \land a \neq b)\}$.
 \end{proof}
 
 %b
 \item
 List the first six elements of a lexicographic enumeration of $L$.
 \begin{proof}[Answer:]
+$aab,\ aba,\ abb,\ baa,\ bab,\ bba$.
 \end{proof}
 \end{enumerate}
 
@@ -142,34 +153,40 @@ Are the following sets closed under the following operations?  If not, what are 
 \item
 The language $\{a, b\}$ under concatenation.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 
 %b
 \item
 The odd length strings over the alphabet $\{a, b\}$ under Kleene star.
 \begin{proof}[Answer:]
+No.  The closure is $\{a, b\}^*$
 \end{proof}
 
 %c
 \item
 $L = \{w \in \{a, b\}^*\}$ under reverse.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 
 %d
 \item
 $L = \{w \in \{a, b\}^*$ : $w$ starts with $a\}$ under reverse.
 \begin{proof}[Answer:]
+No.  The closure is $\{w \in \{a, b\}^*$ : $w$ starts and ends with $a\}$
 \end{proof}
 
 %e
 \item
 $L = \{w \in \{a, b\}^*$ : $w$ ends in $a\}$ under concatenation.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 \end{enumerate}
 \end{enumerate}
  
+\pagebreak
 \chtitle{3}
 \begin{enumerate}
 \addtocounter{enumi}{1}
@@ -181,6 +198,7 @@ $L = \{w \in \{a, b\}^*$ : $w$ ends in $a\}$ under concatenation.
 \item
 Consider the optical character recognition (OCR) problem: Given an array of black and white pixels, and a set of characters, determine which character best matches the pixel array. Formulate this problem as a language recognition problem.
 \begin{proof}[Answer:]
+$L = \{<a, c>$ : the character $c$ is the best match for the pixel array $a\}$.
 \end{proof}
 
 % ---
@@ -191,6 +209,7 @@ Consider the optical character recognition (OCR) problem: Given an array of blac
 Consider the language $A^nB^nC^n = \{a^nb^nc^n: n \geq 0\}$, discussed in Section 3.3.3.  We might consider the following design for a PDA to accept $A^nB^nC^n$:  As each $a$ is read, push two $a$'s onto the stack.  Then pop one $a$ for each $b$ and one $a$ for each $c$.  If the input and the stack both become empty, accept.  Otherwise reject.  Why doesn’t this 
 work?
 \begin{proof}[Answer:]
+This PDA doesn't work because it would accept the string $aabcc$, which is not part of the language $A^nB^nC^n$.
 \end{proof}
 
 % ---
@@ -220,12 +239,14 @@ Given a Java program $p$ and the input $0$, consider the question,``Does $p$ eve
 \item
 Describe a semidecision procedure that answers this question.
 \begin{proof}[Answer:]
+Compile $p$ and run it with the input $0$.  If there is output return yes, if it exits without output, return no.
 \end{proof}
 
 %b
 \item
 Is there an obvious way to turn your answer to part (a) into a decision procedure?
 \begin{proof}[Answer:]
+No, this is equivalent to the halting problem.
 \end{proof}
 \end{enumerate}
 
@@ -236,6 +257,7 @@ Is there an obvious way to turn your answer to part (a) into a decision procedur
 \item
 Let $L = \{w \in \{a, b\}^*: w = w^R\}$.  What is $chop(L)$? 
 \begin{proof}[Answer:]
+$chop(L) = \{w \in L: w\ is\ even\}$.
 \end{proof}
 
 % ---
@@ -251,24 +273,30 @@ Are the following sets closed under the following operations?  Prove your answer
 \item
 * The odd length strings over the alphabet $\{a, b\}$ under concatenation.
 \begin{proof}[Answer:]
+No.  The closure is $\{a, b\}^+$
 \end{proof}
 \begin{proof}
+$a$ and $b$, both strings in the language, concatenate to produce $ab$, which is not in the language.
 \end{proof}
 
 %b
 \item
-$L = \{w \in \{a, b\}^* : w ends in a\}$ under the function odds, defined on strings as follows: $odds(s)$ = the string that is formed by concatenating together all of the odd numbered characters of $s$.  (Start numbering the characters at 1.)  For example, $odds(ababbbb) = aabb$.
+$L = \{w \in \{a, b\}^* : w$ ends in $a\}$ under the function odds, defined on strings as follows: \linebreak $odds(s)$ = the string that is formed by concatenating together all of the odd numbered \linebreak characters of $s$.  (Start numbering the characters at 1.)  For example, $odds(ababbbb) = aabb$.
 \begin{proof}[Answer:]
+No. The closure is $\{w \in \{a, b\}^* : w$ ends in $a$ and $\card{w}$ is odd\}.
 \end{proof}
 \begin{proof}
+The string $ba$ is in L, but $odds(ba) = b$ is not.
 \end{proof}
 
 %c
 \item
 FIN (the set of finite languages) under the function $oddsL$, defined on languages as follows: $oddsL(L) = \{w : \exists x \in L (w = odds(x))\}$ 
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 \begin{proof}
+The subset of a finite language must also be finite, and $oddsL(L) \subseteq L$, so FIN is closed under $oddsL$.
 \end{proof}
 
 %d
@@ -283,16 +311,20 @@ FIN (the set of finite languages) under the function $oddsL$, defined on languag
 \item
 FIN under the function $maxstring$, defined in Example 8.22.
 \begin{proof}[Answer:]
+Yes.
 \end{proof}
 \begin{proof}
+The subset of a finite language must also be finite, and $maxstring(L) \subseteq L$, so FIN is closed under $maxstring$.
 \end{proof}
 
 %f
 \item
 INF under the function $maxstring$. 
 \begin{proof}[Answer:]
+No.  The closure is INF $\cup$ FIN
 \end{proof}
 \begin{proof}
+The language $a^*b^* \in$ INF.  $maxstring(a^*b^*) = \emptyset$, which is finite, and so not in INF.
 \end{proof}
 \end{enumerate}
 
@@ -313,6 +345,18 @@ Play Sudoku.
 Solve Rubik's Cube \textregistered .
 \end{enumerate}
 \begin{proof}[Answer:]
+\begin{verbatim}
+
+
+sudoku(starting-board):
+    /* Assume subset(board1, board2) returns True if board2 has all the same numbers
+    as board1 in all the same places and false otherwise.  board2 may have additional
+    numbers corresponding to the blank spaces in board1. */
+    
+    /* Assume complete-boards is the set of all completely filled legal sudoku boards. */
+    
+    return choose(x from complete-boards: subset(starting-board, x)).
+\end{verbatim}
 \end{proof}
 \end{enumerate}
 \end{document}
