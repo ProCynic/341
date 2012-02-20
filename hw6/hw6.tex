@@ -34,19 +34,21 @@ gives the correct answer and terminates.
 %a
 \item
 Given two DFSMs $M_1$ and $M_2$, is $L(M_1) = L(M_2)^R$?
-\begin{proof}[Procedure]
+\begin{proof}[Procedure:]
 First, take $M_1$ and construct a new machine $M_1'$ as follows.  Create a new start state and provide epsilon transitions to every accepting state of $M_1$.  Then mark these states as non accepting and mark the old start state as accepting.  Now take every state transition and reverse it.  Now minimize $M_1'$ and $M_2$ and compare them.  If they are the same machine, then $L(M_1) = L(M_2)^R$ so return $True$.  Otherwise return $False$.
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
+Since $M_1$ is finite, the conversion procedure will termintate, and the procedure to compare two FSMs has been established in the book to both terminate and be correct.
 \end{proof}
 
 %b
 \item
 Given an FSM $M$ and a regular expression $\alpha$, is it true that $L(M)$ and $L(\alpha)$ are both finite and $M$ accepts exactly two more strings than $\alpha$ generates.
-\begin{proof}[Procedure]
-First, determine if $L(M)$ and $L(\alpha)$ are both finite.  For $M$, $L(M)$ is finite iff $M$ has no loops, and for $\alpha$, $L(\alpha)$ is finite iff $\alpha$ contains neither $*$ nor $+$.  Now, if both of them are finite, count all the strings each generates.  If $\card{L(M)} = 2 + \card{L(\alpha)}$ then return $True$, else return $False$.
+\begin{proof}[Procedure:]
+First, determine if $L(M)$ and $L(\alpha)$ are both finite.  For $M$, $L(M)$ is finite iff $M$ has no loops, and for $\alpha$, $L(\alpha)$ is finite iff $\alpha$ contains neither $*$ nor $+$.  If at least one is not finite, return $False$.  Now, if both of them are finite, list and count all the strings each generates.  If $\card{L(M)} = 2 + \card{L(\alpha)}$ then return $True$, else return $False$.
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
+Since both FSMs and regular expressions are finite, they can be inspected for loops or $*$ and $+$ to determine whether or not they represtent finite languages in finite time.  If both languages are finite, the number of strings in each language can be counted in finite time, so this procedure must terminate. If one of the languages is not finite, this will return $False$, and if their cardinality is not as specified it will return $False$, and otherwise it will return $True$, so it must be correct.
 \end{proof}
 \end{enumerate}
 \end{enumerate}
@@ -65,19 +67,19 @@ For each of the following languages $L$, state whether or not $L$ is regular. Pr
 %a
 \item
 $\{w \in \{0, 1, \#\}^*\ :\ w = x\#y$, where $x, y \in \{0, 1\}^*$ and $\card{x}\cdot \card{y} \equiv _5 0\}$.  (Let $\cdot$ mean integer multiplication).
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
 \end{proof}
 
 %b
 \item
 $\{w \in \{1\}^*$ : $w$ is, for some $n \geq 1$, the unary encoding of $10^n\}$.  (So $L = \{1111111111,\ 1^{100},\ 1^{1000},\ \ldots\}$.)
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
 $False$.
 \end{proof}
-\begin{proof}[Proof]
-Let $w$ be $1^{10^k}$.  Then by the Pumping Theorem, $y = 1^p$ for some integer $p$ where $1 \leq p \leq k$.  Now pump out once to generate a new string $w' = 1^{10^k - p}$
+\begin{proof}[Proof:]
+Let $w$ be $1^{10^k}$.  Then by the Pumping Theorem, $y = 1^p$ for some integer $p$ where $1 \leq p \leq k$.  Now pump out once to generate a new string $w' = 1^{10^k - p}$.  Since $p \leq k$, $w'$ cannot be in the language.  Therefore this language is not regular.
 \end{proof}
 \end{enumerate}
 
@@ -88,7 +90,7 @@ Let $w$ be $1^{10^k}$.  Then by the Pumping Theorem, $y = 1^p$ for some integer 
 
 \item
 Define a \textbf{color word} to be an English word that is the name of a color.  So some example color words are \texttt{red}, \texttt{fuschia}, and \texttt{ochre}.  Define an \textbf{animal word} to be an English word that is the common name of an animal.  So some example animal words are \texttt{cow}, \texttt{cats}, and \texttt{hippopotamus}.  Let $L = \{w$ : $w$ is a sentence with legal English syntax and the number of color words in $w$ equals the number of animal words in $w\}$.  As examples, observe that \texttt{red cats like catnip} $\in L$, but \texttt{red cats like blue green balls} $\not \in L$.  Note that, to be in $L$, $w$ must satisfy the syntactic rules of English.  It is not necessary for $w$ to make sense.  So, for example, \texttt{red red blue red cats like dogs and dogs and dogs} $\in L$.  Prove that $L$ is not regular.  (Be particularly careful if you use the Pumping Theorem.  You must choose a $w$ that is actually in $L$.)
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
 \end{proof}
 
 
@@ -108,10 +110,12 @@ $\lnot \lnot P$ & is not in $L$.
 \end{center}
 
 Is L regular?  Prove your answer.
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
+Yes, $L$ is regular. 
 \end{proof}
-\begin{proof}[Proof]
-\end{proof}
+\begin{proof}[Proof:]
+Let $V = (P \cup Q \cup R \cup S \cup T)$ and $B = (\land \cup \lor\ \cup \rightarrow)$. $L$ is represented by this regular expression: $(VB)^*\lnot V(BV)^*$
+\end{proof} 
 
 
 % --
@@ -123,57 +127,71 @@ For each of the following claims, state whether it is $True$ or $False$.  Prove 
 %a
 \item
 If $L = L_1L_2$ and $L$ is regular then $L_1$ and $L_2$ must be regular.
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
+$False$.
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
+Let $L_1 = \{w\ :\ a^nb^m\ n \geq m\}$.  Let $L_2 = \{w\ :\ b^na^m\ n \geq m\}$.  We have shown in class that $L_1$ is not regular, and since $L_1$ is a letter substitution of $L_2$ and the regular languages are closed under letter substitution, $L_2$ must be non regular as well.  However, $L = L_1L_2$ is simply $(a \cup b)^*$, which is regular.
 \end{proof}
 
 %b
 \item
 $(\lnot (\lnot L)$ is regular) $\rightarrow$ ($L$ is regular).
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
+$True$.
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
+$\lnot (\lnot L) = L$
 \end{proof}
 
 %c
 \item
 $(L_1 - L_2$ is regular) $\rightarrow$ ($L_1$ is regular).
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
+$False$.
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
+Let $L_1$ and $L_2$ both be $A^nB^n$, which has been proven to be non regular.  Then $L_1 - L_2 = \emptyset$, which is regular.
 \end{proof}
 
 %d
 \item
 $(L^R$ is regular) $\rightarrow$ ($L$ is regular).
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
+$True$.
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
+The regular languages are closed under reverse, and $L = (L^R)^R$.
 \end{proof}
 
 %e
 \item
 For any language $L$, $L \cup \{a^nb^n\ :\ n \geq 0\}$ must not regular.
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
+$False$.
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
+Let $L = (a \cup b)^*$.  Then $L \cup \{a^nb^n\ :\ n \geq 0\} = (a \cup b)^*$, which is regular.
 \end{proof}
 
 %f
 \item
 Given any language $L$, it cannot be true that $L - \{a^nb^n\ :\ n \geq 0\}$ is regular.
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
+$False$.
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
+Let $L = \{a^nb^n\ :\ n \geq 0\}$.  Then $L - \{a^nb^n\ :\ n \geq 0\} = \emptyset$, which is regular.
 \end{proof}
 
 %g
 \item
 The finite languages are closed under Kleene star.
-\begin{proof}[Answer]
+\begin{proof}[Answer:]
+$False$.
 \end{proof}
-\begin{proof}[Proof]
+\begin{proof}[Proof:]
+Let $L = \{a\}$.  Then $L$ is finite and $L^*$ is not finite. 
 \end{proof}
 \end{enumerate}
 \end{enumerate}
