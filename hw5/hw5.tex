@@ -10,13 +10,13 @@
 \newcommand{\images}{/home/gparker/classes/341/images}
 
 \begin{document}
-\begin{center}
-\textbf{
+\begin{flushleft}
+\textbf{\noindent
 CS 341 Automata Theory \\
-Elaine Rich \\
+STUDENT NAME - EID \\
 Homework 5 \\
 Due Tuesday, February 14}\\
-\end{center}
+\end{flushleft}
 \noindent
 This assignment covers Chapter 8. \\
 
@@ -33,42 +33,82 @@ For each of the following languages $L$, state whether or not $L$ is regular.  P
 %a
 \item
 $\{a^ib^j$ : $i, j \geq 0$ and $i + j = 5\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %b
 \item
 $\{a^ib^j$ : $i, j \geq 0$ and $i - j = 5\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %c
 \item
 $\{w = xy$ : $x, y \in \{a, b\}^*$ and $\card{x} = \card{y}$ and $\#_a(x) \geq \#_a(y)\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %d
 \item
 $\{w = xyzy^Rx$ : $x, y, z \in \{a, b\}^*\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %e
 \item
 $\{w = xyzy$ : $x, y, z \in \{0, 1\}^*\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %f
 \item
 $\{w \in \{0, 1\}^* : \#_0(w) \neq \#_1(w)\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %g
 \item
 * $\{w \in \{a, b\}^* : \exists x \in \{a, b\}^+\ (w = xx^Rx)\}$
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %h
 \item
 $\{w \in \{a, b\}^*$ : the number of occurrences of the substring \texttt{ab} equals the number of occurrences of the substring \texttt{ba}\}.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %i
 \item
 * $\{w: w \in \{a – z\}^*$ and the letters of $w$ appear in reverse alphabetical order\}.  For example, \texttt{spoonfeed} $\in L$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %j
 \item
 $L_0^*$, where $L_0 = \{ba^ib^ja^k,\ j \geq 0,\ 0 \leq i \leq k\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 \end{enumerate}
 
 % ---
@@ -81,10 +121,18 @@ For each of the following languages $L$, state whether $L$ is regular or not and
 %a
 \item
 $\{uww^Rv$ : $u, v, w \in \{a, b\}^+\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %b
 \item
 $\{xyzy^Rx\ :\ x, y, z \in \{a, b\}^+\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 \end{enumerate}
 
 
@@ -94,6 +142,8 @@ $\{xyzy^Rx\ :\ x, y, z \in \{a, b\}^+\}$.
 
 \item
 Use the Pumping Theorem to complete the proof, given in Chapter L.3.1, that English isn’t regular.
+\begin{proof}[Proof:]
+\end{proof}
 
 % ---
 % 4
@@ -106,10 +156,14 @@ Prove by construction that the regular languages are closed under:
 %a
 \item
 intersection.
+\begin{proof}[Proof:]
+\end{proof}
  
 %b
 \item
 * set difference.
+\begin{proof}[Proof:]
+\end{proof}
 \end{enumerate}
 
 % --
@@ -121,10 +175,14 @@ Prove that the regular languages are closed under each of the following operatio
 %a
 \item
 $pref(L) = \{w: \exists x \in \Sigma ^*\ (wx \in L)\}$.
+\begin{proof}[Proof:]
+\end{proof}
 
 %b
 \item
 $suff(L) = \{w: \exists x \in \Sigma ^*\ (xw \in L)\}$.
+\begin{proof}[Proof:]
+\end{proof}
 \end{enumerate}
 
 
@@ -140,22 +198,32 @@ following languages:
 %a
 \item
 $maxstring(A^nB^n)$.
+\begin{proof}[Answer:]
+\end{proof}
 
 %b
 \item
 $maxstring(a^ib^jc^k, 1 \leq k \leq j \leq i)$.
+\begin{proof}[Answer:]
+\end{proof}
 
 %c
 \item
 $maxstring(L_1L_2)$, where $L_1 = \{w \in \{a, b\}^*$ : $w$ contains exactly one $a$\} and $L_2 = \{a\}$.
+\begin{proof}[Answer:]
+\end{proof}
 
 %d
 \item
 $mix((aba)^*)$.
+\begin{proof}[Answer:]
+\end{proof}
 
 %e
 \item
 $mix(a^*b^*)$.
+\begin{proof}[Answer:]
+\end{proof}
 \end{enumerate}
 
 % ---
@@ -169,10 +237,18 @@ Define the function $midchar(L) = \{c : \exists w \in L\ (w = ycz, c \in \Sigma 
 %a
 \item
 Are the regular languages closed under $midchar$?  Prove your answer.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %b
 \item
 Are the nonregular languages closed under $midchar$?  Prove your answer.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 \end{enumerate}
 
 % ---
@@ -180,6 +256,10 @@ Are the nonregular languages closed under $midchar$?  Prove your answer.
 % ---
 \item
 Define the function $shuffle(L) = \{w : \exists x \in L$ ($w$ is some permutation of $x$)\}.  For example, if $L = \{ab,\ abc\}$, then $shuffle(L) = \{ab,\ abc,\ ba,\ acb,\ bac,\ bca,\ cab,\ cba\}$.  Are the regular languages closed under $shuffle$?  Prove your answer.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 % ---
 % 9
@@ -191,22 +271,42 @@ Consider any function $f(L_1) = L_2$, where $L_1$ and $L_2$ are both languages o
 %a
 \item
 $f(L) = L^R$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %b
 \item
 $f(L)  =  \{w:\ w$ is formed by taking a string in $L$ and replacing all  \texttt{1}'s with  \texttt{0}'s and leaving the  \texttt{0}'s unchanged\}.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %c
 \item
 $f(L) = L \cup 0^*$
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %d
 \item
 $f(L)  =  \{w:\ w$ is formed by taking a string in $L$ and replacing all \texttt{1}'s with  \texttt{0}'s and all  \texttt{0}'s with  \texttt{1}'s (simultaneously)\}.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 
 %e
 \item
 $f(L) = \{w: \exists x \in L\ (w = x\texttt{00})\}$.
+\begin{proof}[Answer:]
+\end{proof}
+\begin{proof}[Proof:]
+\end{proof}
 \end{enumerate}
 
 % ---
@@ -215,5 +315,7 @@ $f(L) = \{w: \exists x \in L\ (w = x\texttt{00})\}$.
 
 \item
 Consider the language $L = \{x\texttt{0}^ny\texttt{1}^nz\ :\ n \geq 0, x \in P, y \in Q, z \in R\}$, where $P$, $Q$, and $R$ are nonempty sets over the alphabet $\{0, 1\}$.  Can you find regular languages $P$, $Q$, and $R$ such that $L$ is not regular?  Can you find regular languages $P$, $Q$, and $R$ such that $L$ is regular?
+\begin{proof}[Solution:]
+\end{proof}
 \end{enumerate}
 \end{document}
