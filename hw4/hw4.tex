@@ -1,0 +1,358 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsmath, amsfonts, amsthm, fullpage, tikz, wrapfig, enumerate}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
+\newcommand{\images}{/home/gparker/classes/341/images}
+
+\begin{document}
+\begin{flushleft}
+\textbf{
+STUDENT NAME\\
+CS 341 Automata Theory \\
+Homework 4 \\
+Due Tuesday, February 7}\\
+\end{flushleft}
+\noindent
+This assignment covers Sections 5.9 - 5.11 and Chapter 6 \\
+
+\noindent
+\textbf{Sections 5.9 - 5.11}
+\begin{enumerate}[1)]
+\addtocounter{enumi}{14}
+% ---
+% 15
+% ---
+
+\item
+Consider the problem of counting the number of words in a text file that may contain letters plus any  of the following characters:
+\[<blank>\ <linefeed>\ <end-of-file>\ ,\ .\ ;\ :\ ?\ !\]
+Define a word to be a string of letters that is preceded by either the beginning of the file or some non-letter character and that is followed by some non-letter character.  For example, there are 11 words in the following text:
+\begin{flushleft}
+
+\parindent 2cm
+
+\texttt{\noindent
+\hspace{2cm}The $<blank>$ $<blank>$ cat $<blank>$ $<linefeed>$\\
+saw $<blank>$ the $<blank>$ $<blank>$ $<blank>$ rat $<linefeed>$\\
+$<blank>$ with\\
+$<linefeed>$ a $<blank>$ hat $<linefeed>$\\
+on $<blank>$ the $<blank>$ $<blank>$ mat $<end-of-file>$
+}
+\end{flushleft}
+Describe a very simple finite-state transducer that reads the characters in the file one at a time and solves the word counting problem.  Assume that there exists an output symbol with the property that, every time it is generated, an 
+external counter gets incremented.
+
+\begin{proof}[Solution]
+\end{proof}
+
+\addtocounter{enumi}{1}
+% ---
+% 17
+% ---
+
+\item
+Real bar code systems are more complex than the one we sketched in the book.  They 
+must be able to encode all ten digits, for example.  There are several industry-standard 
+formats for bar codes, including the common UPC code found on nearly everything we 
+buy.  Search the web.  Find the encoding scheme used for UPC codes.  Describe a finite 
+state transducer that reads the bars and outputs the corresponding decimal number.  You do 
+not need to write out every state.  Show some at the beginning.  Then describe, in English, 
+the structure of the rest of the machine.
+
+\begin{center}
+\includegraphics[scale=.1]{\images /hw4barcode.png}
+\end{center}
+
+\begin{proof}[Solution]
+\end{proof}
+
+% ---
+% 18
+% ---
+
+\item
+Extend the description of the Soundex FSM that was started in Example 5.33 so that it can assign a code to the name Pfifer.  Remember that you must take into account the fact that every Soundex code is made up of exactly four characters.
+
+\begin{proof}[Solution]
+\end{proof}
+
+% ---
+% 19
+% ---
+
+\item
+* Consider the weather/passport HMM of Example 5.37.  Trace the execution of the Viterbi and forward algorithms to answer the following questions:
+
+\begin{enumerate}[a)]
+%a
+\item
+Suppose that the report $\#\#\#L$ is received from Athens.  What was the most likely weather during the time of the report?
+
+\begin{proof}[Solution]
+\end{proof}
+ 
+%b
+\item
+Is it more likely that $\#\#\#L$ came from London or from Athens?
+\begin{proof}[Solution]
+\end{proof}
+\end{enumerate}
+
+\addtocounter{enumi}{2}
+% --
+% 22
+% --
+
+\item
+In I.1.2, we describe the Alternating Bit Protocol for handling message transmission in a network.  Use the FSM that describes the sender to answer the question, ``Is there any upper bound on the number of times a message may be retransmitted?''
+\begin{proof}[Solution]
+\end{proof}
+
+\end{enumerate}
+
+\textbf{Chapter 6}
+
+\begin{enumerate}[1)]
+% ---
+% 1
+% ---
+
+\item
+Describe in English, as briefly as possible, the language defined by each of these regular expressions:
+\begin{enumerate}[a)]
+%a
+\item
+$(b \cup ba) (b \cup a)^* (ab \cup b)$.
+\begin{proof}[Solution]
+\end{proof}
+
+\end{enumerate}
+
+% ---
+% 2
+% ---
+
+\item
+Write a regular expression to describe each of the following languages:
+\begin{enumerate}[a)]
+\addtocounter{enumii}{1}
+%b
+\item
+$\{w \in \{a, b\}^*$ : $w$ does not end in $ba\}$.
+\begin{proof}[Solution]
+\end{proof}
+
+\addtocounter{enumii}{1}
+%d
+\item
+$\{w \in \{0, 1\}^*$ : $w$ corresponds to the binary encoding, without leading $0$'s, of natural numbers that are evenly divisible by $4\}$.
+\begin{proof}[Solution]
+\end{proof}
+%e
+\item
+$\{w \in \{0, 1\}^*$ : $w$ corresponds to the binary encoding, without leading $0$'s, of natural numbers that are powers of $4\}$.
+\begin{proof}[Solution]
+\end{proof}
+\addtocounter{enumii}{2}
+%h
+\item
+$\{w \in \{0, 1\}^*$ : $w$ does not have \texttt{001} as a substring\}.
+\begin{proof}[Solution]
+\end{proof}
+\addtocounter{enumii}{7}
+%p
+\item
+* $\{w \in \{0, 1\}^*$ : $w$ contains exactly two occurrences of the substring \texttt{aa}\}.
+\begin{proof}[Solution]
+\end{proof}
+%q
+\item
+* $\{w \in \{a, b\}^*$ : $w$ contains no more than two occurrences of the substring \texttt{aa}\}.
+\begin{proof}[Solution]
+\end{proof}
+\end{enumerate}
+
+% ---
+% 3
+% ---
+\item
+Simplify each of the following regular expressions:
+\begin{enumerate}[a)]
+%a
+\item
+$(a \cup b)^* (a \cup \epsilon) b^*$.
+\begin{proof}[Solution]
+\end{proof}
+%b
+\item
+$(\emptyset ^* \cup b) b^*$.
+\begin{proof}[Solution]
+\end{proof}
+%c
+\item
+* $(a \cup b)^*a^* \cup b$.
+\begin{proof}[Solution]
+\end{proof}
+%d
+\item
+* $((a \cup b)^*)^*$.
+\begin{proof}[Solution]
+\end{proof}
+
+\pagebreak
+%e
+\item
+$((a \cup b)^+)^*$.
+\begin{proof}[Solution]
+\end{proof}
+%f
+\item
+$a ( (a \cup b)(b \cup a) )^* \cup a ( (a \cup b) a )^* \cup a ( (b \cup a) b )^*$.
+\begin{proof}[Solution]
+\end{proof}
+\end{enumerate}
+% ---
+% 4
+% ---
+\item
+For each of the following expressions $E$, answer the following three questions and prove your answer:
+\begin{center}
+\begin{enumerate}[(i)]
+%i
+\item
+Is $E$ a regular expression?
+
+%ii
+\item
+If $E$ is a regular expression, give a simpler regular expression.
+
+%iii
+\item
+Does $E$ describe a regular language?
+\end{enumerate}
+\end{center}
+
+\begin{enumerate}[a)]
+\addtocounter{enumii}{1}
+%b
+\item
+$(a^+a^nb^n)$.
+\begin{proof}[Answer] $ $\\
+\begin{enumerate}[(i)]
+\item
+YOUR ANSWER
+\item
+YOUR ANSWER
+\item
+YOUR ANSWER
+\end{enumerate}
+\end{proof}
+\begin{proof}
+\end{proof}
+\addtocounter{enumii}{1}
+%d
+\item
+$(((ab) \cup c)^* \cap (b \cup c^*))$.
+\begin{proof}[Answer] $ $\\
+\begin{enumerate}[(i)]
+\item
+YOUR ANSWER
+\item
+YOUR ANSWER
+\item
+YOUR ANSWER
+\end{enumerate}
+\end{proof}
+\begin{proof}
+\end{proof}
+\end{enumerate}
+
+\addtocounter{enumi}{4}
+% ---
+% 9
+% ---
+
+\item
+* Consider the following FSM $M$:
+\begin{center}
+\includegraphics[scale=.45]{\images /hw4fsm9.png}
+\end{center}
+
+\begin{enumerate}[a)]
+%a
+\item
+Show a regular expression for $L(M)$.
+\begin{proof}[Solution]
+\end{proof}
+%b
+\item
+Describe $L(M)$ in English.
+\begin{proof}[Solution]
+\end{proof}
+\end{enumerate}
+
+\addtocounter{enumi}{5}
+% ---
+% 15
+% ---
+\item
+Consider the following FSM M:
+
+\begin{center}
+\includegraphics[scale=.45]{\images /hw4fsm15.png}
+\end{center}
+
+\begin{enumerate}[a)]
+%a
+\item
+Show a regular expression for $L(M)$.
+\begin{proof}[Solution]
+\end{proof}
+%b
+\item
+Show a DFSM that accepts $\lnot L(M)$.
+\begin{proof}[Solution]
+\end{proof}
+\end{enumerate}
+
+\addtocounter{enumi}{2}
+% ---
+% 18
+% ---
+
+\item
+Let $\Sigma = \{a, b\}$.  Let $L = \{\epsilon, a, b\}$. Let $R$ be a relation defined on $\Sigma ^*$ as follows: $\forall xy\ (xRy$ iff $y = xb)$.  Let $R'$ be the reflexive, transitive closure of $R$.  Let $L' = \{x : \exists y \in L (yR'x)\}$.  Write a regular expression for $L'$.
+\begin{proof}[Solution]
+\end{proof}
+\addtocounter{enumi}{1}
+% ---
+% 20
+% ---
+\item
+For each of the following statements, state whether it is $True$ or $False$.  Prove your answer.
+\begin{enumerate}[a)]
+\addtocounter
+Let $\alpha = a$ and $\beta = b$.  Then $bbbb$ is an element of the language represented by $(\alpha \cup \beta)^*$, but not that of $\alpha(\beta\alpha \cup \alpha)$.
+\end{proof}{enumii}{6}
+%g
+\item
+If $\alpha$ and $\beta$ are any two regular expressions, then $(\alpha \cup \beta)^* = \alpha(\beta\alpha \cup \alpha)$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}
+\end{proof}
+%h
+\item
+If $\alpha$ and $\beta$ are any two regular expressions, then $(\alpha\beta)^*\alpha = \alpha(\beta\alpha)^*$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}
+\end{proof}
+\end{enumerate}
+\end{enumerate}
+\end{document}
