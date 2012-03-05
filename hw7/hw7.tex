@@ -1,0 +1,237 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsfonts, amsthm, amsmath, fullpage, tikz, wrapfig, enumerate}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
+\newcommand{\images}{/home/gparker/classes/341/images}
+
+\begin{document}
+\begin{center}
+\textbf{
+CS 341 Automata Theory \\
+Elaine Rich \\
+Homework 7 \\
+Due: Tuesday, February 28}\\
+\end{center}
+\noindent
+This assignment covers Chapter 11. \\
+
+\begin{enumerate}[1)]
+% ---
+% 1
+% ---
+
+\item
+Let $\Sigma = \{a, b\}$. For the languages that are defined by each of the following grammars, do each of the following:
+\begin{center}
+\begin{enumerate}[i.]
+%i. 
+\item
+List five strings that are in $L$. 
+
+%ii.
+\item
+List five strings that are not in $L$.
+
+%iii.
+\item
+Describe $L$ concisely.  You can use regular expressions, expressions using variables (e.g., $a^nb^n$, or set theoretic expressions (e.g., $\{x: \ldots\}$)
+
+%iv.
+\item
+Indicate whether or not $L$ is regular.  Prove your answer.
+\end{enumerate}
+\end{center}
+\begin{enumerate}[a)]
+%a)
+\item
+$S \rightarrow \texttt{a}S \mid S\texttt{b} \mid \epsilon$
+
+%b)
+\item
+$S \rightarrow \texttt{a}S\texttt{a} \mid \texttt{b}S\texttt{b} \mid a \mid b$
+
+%c)
+\item
+* $S \rightarrow \texttt{a}S \mid \texttt{b}S \mid \epsilon$
+
+%d)
+\item
+* $S \rightarrow \texttt{a}S \mid \texttt{a}S\texttt{b}S \mid \epsilon$
+\end{enumerate}
+
+%---
+% 2
+%---
+a) 
+b) * 00101101
+\item
+Consider the following grammar $G : S \rightarrow \texttt{0}S\texttt{1} \mid SS \mid \texttt{10}$. Show a parse tree produced by $G$ for each of the following strings:
+\begin{enumerate}[a)]
+%a
+\item
+\texttt{010110}
+
+%b
+\item
+* \texttt{00101101}
+\end{enumerate}
+
+% ---
+% 3
+% ---
+
+\item
+Let $G$ be the grammar of Example 11.12.  Show a third parse tree that $G$ can produce for the string $(())()$.
+
+% ---
+% 4
+% ---
+
+\item
+Consider the following context free grammar G:
+\begin{align*}
+S &\rightarrow \texttt{a}S\texttt{a}\\
+S &\rightarrow T\\
+S &\rightarrow \epsilon\\
+T &\rightarrow \texttt{b}T\\
+T &\rightarrow \texttt{c}T\\
+T &\rightarrow \epsilon\\
+\end{align*}
+One of these rules is redundant and could be removed without altering $L(G)$.  Which one?
+
+
+% ---
+% 5
+% ---
+
+\item
+Using the simple English grammar that we showed in Example 11.6, show two parse trees for each of the following sentences.  In each case, indicate which parse tree almost certainly corresponds to the intended meaning of the sentence:
+\begin{enumerate}[a)]
+%a)
+\item
+\texttt{The bear shot Fluffy with the rifle}.
+
+%b)
+\item
+\texttt{Fluffy likes the girl with the chocolate}.
+\end{enumerate}
+
+
+% --
+% 6
+% --
+\item
+Show a context-free grammar for each of the following languages $L$:
+\begin{enumerate}[a)]
+%a
+\item
+$\{a^ib^j\ :\ 2i = 3j + 1\}$.
+
+%b
+\item
+* $\{w \in \{a, b\}^*\ :\ \#_a(w) = 2 \#_b(w)\}$.
+
+%c
+\item
+$\{w \in \{a, b\}^*\ :\ w = w^R\}$.
+
+%d
+\item
+$\{w \in \{a, b\}^*$ : every prefix of $w$ has at least as many $a$’s as $b$’s\}.
+
+%e
+\item
+$\{a^mb^nc^pd^q\ :\ m, n, p, q \geq 0$ and $m + n = p + q\}$.
+
+%f
+\item
+$\{b_i\#b_{i+1}^R\ :\ b_i$ is the binary representation of some integer  $i,\ i \geq 0$, without leading zeros\}. (For example 101\#011 $\in L$.)
+\end{enumerate}
+
+% --
+% 7
+% --
+\item
+* Let $G$ be the ambiguous expression grammar of Example 11.14.  Show at least three different parse trees that can be generated from $G$ for the string \texttt{id+id*id*id}.
+
+% --
+% 8
+% --
+\item
+Consider the unambiguous expression grammar $G$ of Example 11.19.
+\begin{enumerate}[a)]
+%a)
+\item
+Trace the derivation of the string \texttt{id+id*id*id} in $G$.
+%b)
+\item
+Add exponentiation $(**)$ and unary minus $(-)$ to  $G$, assigning the highest precedence to unary minus, followed by exponentiation, multiplication, and addition, in that order.
+\end{enumerate}
+
+% --
+% 9
+% --
+\item
+Let $L = \{w \in \{a, b, \cup, \epsilon, (, ), *, +\}^*$ : $w$ is a syntactically legal regular expression\}.  
+\begin{enumerate}[a)]
+%a)
+\item
+Write an  unambiguous context-free grammar that generates  L.  Your grammar should have a structure 
+similar to the arithmetic expression grammar G that we presented in Example 11.19.  It should create parse 
+trees that:
+\begin{itemize}
+\item
+Associate left given operators of equal precedence, and
+\item
+Correspond to assigning the following precedence levels to the operators (from highest to lowest):
+\begin{enumerate}[1)]
+\item
+$*$ and $+$
+
+\item
+concatenation
+
+\item
+$\cup$
+\end{enumerate}
+\end{itemize}
+%b)
+\item
+Show the parse tree that your grammar will produce for the string $(a \cup b)ba^*$.
+\end{enumerate}
+
+% --
+% 10
+% --
+\item
+* In Appendix I.3.1, we present a simplified grammar for URIs (Uniform Resource Identifiers), the names that we use to refer to objects on the Web.  
+\begin{enumerate}[a)]
+%a)
+\item
+Using that grammar, show a parse tree for:\\
+\texttt{https://www.mystuff.wow/widgets/fradgit\#sword}
+%b)
+\item
+Write a regular expression that is equivalent to the grammar that we present.
+\end{enumerate}
+
+% --
+% 11
+% --
+\item
+Consider the grammar $G = (\{S, A, B, T, a, c\}, \{a, c\}, R, S)$, where $R = \{S \rightarrow AB,\ S \rightarrow BA,\ A \rightarrow aA,\ A \rightarrow ac,\ B \rightarrow Tc,\ T \rightarrow aT,\ T \rightarrow a\}$.
+\begin{enumerate}[a)]
+%a)
+\item
+Show that $G$ is ambiguous.  
+%b)
+\item
+Find an equivalent grammar that is not ambiguous.
+\end{enumerate}
+\end{enumerate}
+\end{document}
