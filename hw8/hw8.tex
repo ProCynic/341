@@ -1,0 +1,110 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsfonts, amsthm, amsmath, fullpage, tikz, wrapfig, enumerate}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
+\newcommand{\images}{/home/gparker/classes/341/images}
+
+\begin{document}
+\begin{center}
+\textbf{
+CS 341 Automata Theory \\
+Elaine Rich \\
+Homework 8 \\
+Due: Tuesday, March 6th}\\
+\end{center}
+\noindent
+This assignment covers Chapter 12. \\
+
+\begin{enumerate}[1)]
+
+% ---
+% 1
+% ---
+
+\item
+Build a PDA to accept each of the following languages $L$:
+\begin{enumerate}[a)]
+%a)
+\item
+$\{\texttt{a}^n\texttt{b}^m:\ m \leq n \leq 2m\}$.
+
+%b)
+\item
+$\{w \in \{\texttt{a}, \texttt{b}\}^*$ : every prefix of $w$ has at least as many \texttt{a}'s as \texttt{b}'s\}.
+
+%c)
+\item
+$\{\texttt{a}^n\texttt{b}^m:\ m \geq n, m-n$ is even\}.
+\end{enumerate}
+
+%---
+% 2
+%---
+
+\item
+Let $L = \{\texttt{ba}^{m_1}\texttt{ba}^{m_2}\texttt{ba}^{m_3} \ldots \texttt{ba}^{m_n}:$ $n \geq 2$, $m_1, m_2, \ldots, m_n \geq 0$, and $m_i \neq m_j$ for some $i$, $j$\}.
+\begin{enumerate}[a)]
+%a
+\item
+Show a PDA that accepts $L$.
+
+%b
+\item
+Show a context-free grammar that generates $L$.
+
+%c
+\item
+Prove that $L$ is not regular.
+\end{enumerate}
+
+% ---
+% 3
+% ---
+
+\item
+Consider the language $L = L_1 \cap L_2$, where $L_1 = \{ww^R:\ w \in \{\texttt{a}, \texttt{b}\}^*\}$ and $L_2 = \{\texttt{a}^n\texttt{b}^*\texttt{a}^n:\ n \geq 0\}$.
+\begin{enumerate}[a)]
+%a
+\item
+List the first four strings in the lexicographic enumeration of $L$.
+
+%b
+\item
+Write a context-free grammar to generate $L$.
+
+%c
+\item
+Show a natural PDA for $L$.  (In other words, don’t just build it from the grammar using one of the two-state constructions presented in the book.)
+
+%d
+\item
+Prove that $L$ is not regular.
+\end{enumerate}
+
+
+% ---
+% 4
+% ---
+
+\item
+* Let $L = \{w \in \{\texttt{a}, \texttt{b}\}^*$ : the first, middle, and last characters of $w$ are identical\}.
+\begin{enumerate}[a)]
+%a
+\item
+Show a context-free grammar for $L$.
+
+%b
+\item
+Show a natural PDA that accepts $L$.
+
+%c
+\item
+Prove that $L$ is not regular.
+\end{enumerate}
+\end{enumerate}
+\end{document}
