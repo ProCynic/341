@@ -4,7 +4,7 @@
 
 \newcommand{\card}[1]{\left| #1 \right|}
 \newcommand{\nat}{\mathbb{N}}
-\newcommand{\ints}{\mathbb{•}
+\newcommand{\ints}{\mathbb{Z}}
 \newcommand{\reals}{\mathbb{R}}
 \newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
 
@@ -83,11 +83,11 @@ G &\rightarrow Ga \mid b
 \item
 Prove that $L$ is not regular.
 \begin{proof}[Proof:]
-If $L$ were regular, then $L^R$ would be regular.  If $L^R$ were regular, then $(L^R)^c$ would be regular.  If $(L^R)^c$ were regular, then $L' = (L^R)^c$ \cap $a^*ba^*b$ would be regular. $L' = a^nba^nb$.
-Let $w = a^{2k}ba^{4k}b$.
+If $L$ were regular, then $L^R$ would be regular.  If $L^R$ were regular, then $\lnot (L^R)$ would be regular.  If $\lnot (L^R)$ were regular, then $L' = \lnot (L^R)\ \cap\ a^*ba^*b$ would be regular. $L' = a^nba^nb$.  Let $w = a^kba^kb$.  Then $y$ must be $a^p$ for some $p \geq 1$, with $y$ in the first region of $a$'s.  Pumping out generates a new string $w' = a^{n-p}ba^nb$ which is not in $L'$.  So by the pumping theorem $L'$ is not regular. Therefore $L$ is not regular. 
 \end{proof}
 \end{enumerate}
 
+\pagebreak
 % ---
 % 3
 % ---
@@ -99,7 +99,7 @@ Consider the language $L = L_1 \cap L_2$, where $L_1 = \{ww^R:\ w \in \{\texttt{
 \item
 List the first four strings in the lexicographic enumeration of $L$.
 \begin{proof}[Solution:]
-\texttt{$\epsilon$, aa, aaaa, abba}
+\texttt{$\epsilon$, aa, bb, aaaa}
 \end{proof}
 
 %b
@@ -123,7 +123,7 @@ Show a natural PDA for $L$.  (In other words, don’t just build it from the gra
 \item
 Prove that $L$ is not regular.
 \begin{proof}[Proof:]
-Let $w = a^kbba^k$.  Then $y$ must be $a^p$ for some $p$ in the first group of $a$'s.  Now pump out and the new string is not in the language because the $a$'s are no longer balanced.
+Let $w = a^kbba^k$.  Then $y$ must be $a^p$ for some $p \geq 1$ in the first group of $a$'s.  Now pump out generates a new string $w' = a^{k-p}bba^k$ which is not in $L$.  Therefore by the pumping theorem $L$ is not regular.
 \end{proof}
 \end{enumerate}
 
