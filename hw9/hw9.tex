@@ -1,0 +1,163 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsfonts, amsthm, amsmath, fullpage, tikz, wrapfig, enumerate}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
+\newcommand{\images}{/home/gparker/classes/341/images}
+
+\begin{document}
+\begin{flushleft}
+\textbf{\noindent
+CS 341 Automata Theory \\
+STUDENT NAME - EID \\
+Homework 9 \\
+Due: Thursday, March 22}\\
+\end{flushleft}
+\noindent
+This assignment covers Chapter 13. \\
+
+\begin{enumerate}[1)]
+
+% ---
+% 1
+% ---
+
+\item
+For each of the following languages $L$, state whether $L$ is regular, context-free but not regular, or not context-free and prove your answer.
+\begin{enumerate}[a)]
+%a)
+\item
+$\{(ab)^na^nb^n:\ n > 0\}$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%b)
+\item
+$\{xwx^R:\ x, w \in \{0, 1\}^+\}$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%c)
+\item
+\{$a^ib^n$: i, $n > 0$ and $i = n$ or $i = 2n$\}.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%d)
+\item
+\{$0^i1^j$: $i, j \geq 0$ and $j = i^2$\}.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%e)
+\item
+$\{a^nb^mc^k:\ m \leq min(n, k)\}$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%f)
+\item
+\{$x\#y$ : $x, y \in \{0, 1\}^*$ and when $x$ and $y$ are viewed as binary numbers, $y = x^2$\}.  For example, the string 100\#10000 $\in L$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+\end{enumerate}
+
+%---
+% 2
+%---
+
+\item
+Give an example of a context-free language $L(\neq \Sigma ^*)$ that contains a subset $L_1$ that is not context-free.  Prove that $L$ is context free.  Describe $L_1$ and prove that it is not context-free.
+\begin{proof}[Describe $L$]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+\begin{proof}[Describe $L_1$]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+% ---
+% 3
+% ---
+
+\item
+*  Give an example of a context-free language  $L$, other than one of the ones in the book, where  $\lnot L$ is not context-free.
+\begin{proof}[Answer]
+\end{proof}
+
+
+% ---
+% 4
+% ---
+
+\item
+Are the context-free languages closed under each of the following operations?  Prove your answer.
+\begin{enumerate}[a)]
+%a
+\item
+$chop(L) = \{w:\ \exists x \in L\ (x = x_1cx_2 \land x_1 \in \Sigma _L^* \land x_2 \in \Sigma _L^* \land c \in \Sigma _L \land \card{x_1} = \card{x_2} \land w = x_1x_2)\}$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%b
+\item
+Letter substitution.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+\end{enumerate}
+
+% ---
+% 5
+% ---
+
+\item
+Let $alt(L) = \{x:\ \exists y, n\ (y \in L, \card{y} = n, n > 0, y = a_1 \ldots a_n, \forall i \leq n (a_i \in \Sigma)$, and $x = a_1a_3a_5\ldots a_k$, where $k = ($if $n$ is even then $n-1$ else $n$))\}.
+\begin{enumerate}[a)]
+%a
+\item
+Consider $L = a^nb^n$.  Clearly describe $L_1 = alt(L)$.
+\begin{proof}[Answer]
+\end{proof}
+
+%b
+\item
+Are the context free languages closed under the function alt?  Prove your answer.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+\end{enumerate}
+
+% ---
+% 6
+% ---
+
+\item
+Suppose that $L$ is context-free and $R$ is regular.  Is $R - L$ necessarily context-free?  Prove your answer.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+\end{enumerate}
+\end{document}
