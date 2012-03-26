@@ -1,0 +1,106 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsfonts, amsthm, amsmath, fullpage, tikz, wrapfig, enumerate}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
+\newcommand{\images}{/home/gparker/classes/341/images}
+
+\begin{document}
+\begin{flushleft}
+\textbf{\noindent
+CS 341 Automata Theory \\
+STUDENT NAME - EID \\
+Homework 10 \\
+Due: Tuesday, March 27}\\
+\end{flushleft}
+\noindent
+This assignment reviews Chapter 13 and covers Chapter 14 and Sections 17.1 - 17.3. \\
+
+\begin{enumerate}[1)]
+
+% ---
+% 1
+% ---
+
+\item
+For each of the following languages $L$, state whether $L$ is regular, context-free but not regular, or not context-free and prove your answer.
+\begin{enumerate}[a)]
+%a)
+\item
+\{$w$ : $w = uu^R$ or $w = ua^n$: $n = \card{u}$, $u \in \{a, b\}^*$\}.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%b)
+\item
+$\{a^nb^{2n}c^m\} \cap \{a^nb^mc^{2m}\}$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%c)
+\item
+$L^*$, where $L = \{0*1^i0*1^i0* : i \geq 0\}$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%d)
+\item
+$\lnot L_0$, where $L_0 = \{ww : w \in \{a, b\}^*\}$.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+%e)
+\item
+$\{x \in \{a, b\}^*$ : $\card{x}$ is even and the first half of $x$ has one more a than does the second half\}.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+\end{enumerate}
+
+%---
+% 2
+%---
+
+\item
+Give a decision procedure to answer the following question: given a context-free grammar $G$, does $G$ generate any even length strings?
+\begin{proof}[Solution]
+\end{proof}
+
+% ---
+% 3
+% ---
+
+\item
+Construct a standard, one-tape Turing machine $M$ to decide the language $L = \{x * y = z$ : $x$, $y$, $z \in 1^+$ and, when  $x$,  $y$, and  $z$ are viewed as unary numbers,  $xy =  z$\}.  For example, the string  $1111*11=11111111 \in L$.  Describe $M$ in the macro language described in Section 17.1.5.
+\begin{proof}[Solution]
+\end{proof}
+
+
+% ---
+% 4
+% ---
+
+\item
+Construct a standard 1-tape Turing machine $M$ to compute the function $sub_3$, which is defined as follows:
+\begin{tabular}{l c l}
+$sub_3(n) =$&$n-3$ &if $n > 2$\\
+&$0$&if $n \leq 2$.\\
+\end{tabular}\\
+Specifically, compute  $sub_3$ of a natural number represented in binary.  For example, on input 10111, $M$ should output 10100.  On input 11101, $M$ should output 11010.  (Hint: you may want to define a subroutine.)
+\begin{proof}[Solution]
+\end{proof}
+\end{enumerate}
+\end{document}
