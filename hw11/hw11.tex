@@ -1,0 +1,177 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsfonts, amsthm, amsmath, fullpage, tikz, wrapfig, enumerate}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
+\newcommand{\images}{/home/gparker/classes/341/images}
+
+\begin{document}
+\begin{flushleft}
+\textbf{\noindent
+CS 341 Automata Theory \\
+STUDENT NAME - EID \\
+Homework 11 \\
+Due: Tuesday, April 3}\\
+\end{flushleft}
+\noindent
+This assignment reviews Turing machine construction and covers Sections 17.3 - 17.6 and Chapter 18 and 19. \\
+
+\begin{enumerate}[1)]
+
+% ---
+% 1
+% ---
+
+\item
+Define a Turing Machine $M$ that computes the function $f:\ \{a, b\}^* \rightarrow N$, where:\\
+\begin{center}
+$f(x)$ = the unary encoding of $max(\#a(x), \#b(x))$.  
+\end{center}
+For example, on input \texttt{aaaabb}, $M$ should output \texttt{1111}.  $M$ may use more than one tape.  It is not necessary to 
+write the exact transition function for $M$.  Describe it in clear English.
+\begin{proof}[Solution]
+\end{proof}
+
+%---
+% 2
+%---
+
+\item
+Construct a Turing machine $M$ that converts binary numbers to their unary representations.  So, specifically, on 
+input $<w>$, where $w$ is the binary encoding of a natural number $n$, M will output $1^n$.  (Hint: use more than one tape.)
+\begin{proof}[Solution]
+\end{proof}
+
+% ---
+% 3
+% ---
+
+\item
+In Example 17.9, we showed a Turing machine that decides the language $WcW$.  If we remove the middle 
+marker $c$, we get the language $WW$.  Construct a Turing machine $M$ that decides $WW$.  You may exploit 
+nondeterminism and/or multiple tapes.  It is not necessary to write the exact transition function for $M$.  Describe 
+it in clear English.
+\begin{proof}[Solution]
+\end{proof}
+
+
+% ---
+% 4
+% ---
+
+\item
+In Example 4.9, we described the Boolean satisfiability problem and we sketched a nondeterministic program 
+that solves it using the function choose.  Now define the language SAT = $\{<w>$ : $w$ is a wff in Boolean logic 
+and $w$ is satisfiable\}.  Describe in clear English the operation of a nondeterministic (and possibly $n$-tape) Turing 
+machine that decides SAT.
+\begin{proof}[Solution]
+\end{proof}
+
+% ---
+% 5
+% ---
+
+\item
+What is the minimum number of tapes required to implement a universal Turing machine?
+\begin{proof}[Solution]
+\end{proof}
+
+% ---
+% 6
+% ---
+
+\item
+Encode the following Turing Machine as an input to the universal Turing machine:
+\begin{center}
+$M = (K, \Sigma, \Gamma, \delta, q_0, \{h\})$, where:   $K = \{q_0, q_1, h\}$,  $\Sigma = \{a, b\}$,  $\Gamma = \{a, b, c, \square\}$, and $\delta =$\\
+\vspace{.5cm}
+\begin{tabular}{|c|c|c|}
+\hline
+$q$&$\sigma$&$\delta(q, \sigma)$\\ \hline
+$q_0$&$a$&$(q_1, b, \rightarrow)$\\ \hline
+$q_0$&$b$&$(q_1, a, \rightarrow)$\\ \hline
+$q_0$&$\square$&$(h, \square, \rightarrow)$\\ \hline
+$q_0$&$c$&$(q_0, c, \rightarrow)$\\ \hline
+$q_1$&$a$&$(q_0, c, \rightarrow)$\\ \hline
+$q_1$&$b$&$(q_0, b, \leftarrow)$\\ \hline
+$q_1$&$\square$&$(q_0, c, \rightarrow)$\\ \hline
+$q_1$&$c$&$(q_1, c, \rightarrow)$\\
+\hline
+\end{tabular}
+\end{center}
+\begin{proof}[Solution]
+\end{proof}
+
+% ---
+% 7
+% ---
+
+\item
+Church’s Thesis makes the claim that all reasonable formal models of computation are equivalent.  And we showed in, Section 17.4, a construction that proved that a simple accumulator/register machine can be implemented as a Turing machine.  By extending that construction, we can show that any computer can be implemented as a Turing machine.  So the existence of a decision procedure (stated in any notation that makes the algorithm clear) to answer a question means that the question is decidable by a Turing machine.  Now suppose that we take an arbitrary question for which a decision procedure exists.  If the question can be reformulated as a language, then the language will be in $D$ iff there exists a decision procedure to answer the question.  For each of the following problems, your answers should be a precise description of an algorithm.  It need not be the description of a Turing Machine:
+\begin{enumerate}
+%a
+\item
+* Let $L = \{<M>$ : $M$ is a DFSM that doesn’t accept any string containing an odd number of 1’s\}.  Show that 
+$L$ is in $D$.
+\begin{proof}[Solution]
+\end{proof}
+
+%b
+\item
+Consider the problem of testing whether a DFSM and a regular expression are equivalent.  Express this problem as a language and show that it is in $D$.
+\begin{proof}[Solution]
+\end{proof}
+\end{enumerate}
+
+
+% ---
+% 8
+% ---
+
+\item
+Consider the language  $L = \{w = xy$ :  $x, y \in \{a, b\}^*$ and $y$ is identical to $x$ except that each character is 
+duplicated\}.  For example \texttt{ababaabbaabb} $\in L$.
+\begin{enumerate}
+%a
+\item
+* Show that $L$ is not context-free.
+\begin{proof}[Solution]
+\end{proof}
+
+%b
+\item
+Show a Post system that generates $L$.
+\begin{proof}[Solution]
+\end{proof}
+\end{enumerate}
+
+
+% ---
+% 9
+% ---
+
+\item
+Consider the language $L = \{<M>$ : $M$ accepts at least two strings\}.
+\begin{enumerate}
+%a
+\item
+Describe in clear English a Turing machine $M$ that semidecides $L$.
+\begin{proof}[Solution]
+\end{proof}
+
+%b
+\item
+Suppose we changed the definition of L just a bit.  We now consider:
+\begin{center}
+$L' = \{<M>$ : $M$ accepts exactly 2 strings\}.
+\end{center}
+Can you tweak the Turing machine you described in part a to semidecide $L'$?
+\begin{proof}[Solution]
+\end{proof}
+\end{enumerate}
+\end{enumerate}
+\end{document}
