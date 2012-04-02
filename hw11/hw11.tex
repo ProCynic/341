@@ -13,7 +13,7 @@
 \begin{flushleft}
 \textbf{\noindent
 CS 341 Automata Theory \\
-STUDENT NAME - EID \\
+Geoffrey Parker - grp352\\
 Homework 11 \\
 Due: Tuesday, April 3}\\
 \end{flushleft}
@@ -34,6 +34,7 @@ $f(x)$ = the unary encoding of $max(\#a(x), \#b(x))$.
 For example, on input \texttt{aaaabb}, $M$ should output \texttt{1111}.  $M$ may use more than one tape.  It is not necessary to 
 write the exact transition function for $M$.  Describe it in clear English.
 \begin{proof}[Solution]
+$M$ will have three tapes.  In the first phase, $M$ will move from left to right over the input string.  For each a, write a 1 to tape 2.  For each b, write a 1 to tape 3.  Overwrite the input on tape 1 with $\square$'s.  Now move right to left on all three tapes.  If there is anything on tapes 2 or 3, write a 1 to tape 1.  If tapes 2 and three are both blank, halt.
 \end{proof}
 
 %---
@@ -44,6 +45,7 @@ write the exact transition function for $M$.  Describe it in clear English.
 Construct a Turing machine $M$ that converts binary numbers to their unary representations.  So, specifically, on 
 input $<w>$, where $w$ is the binary encoding of a natural number $n$, $M$ will output $1^n$.  (Hint: use more than one tape.)
 \begin{proof}[Solution]
+Move left to right, copying the input from tape 2 to tape 1 and overwriting tape 1 with blanks.  Move back to the left, writing $1^n$ //TODO: finish
 \end{proof}
 
 % ---
@@ -56,6 +58,7 @@ marker $c$, we get the language $WW$.  Construct a Turing machine $M$ that decid
 nondeterminism and/or multiple tapes.  It is not necessary to write the exact transition function for $M$.  Describe 
 it in clear English.
 \begin{proof}[Solution]
+Move left to right over the input on tape 1, copying the input onto tape 2 as you go.  At a nondeterministically chosen point, switch to writing the input to tape 3 instead of tape 2.  When you reach the end of the input, compare tapes 2 and 3.  If they match, accept, if not, reject.
 \end{proof}
 
 
@@ -68,7 +71,17 @@ In Example 4.9, we described the Boolean satisfiability problem and we sketched 
 that solves it using the function choose.  Now define the language SAT = $\{<w>$ : $w$ is a wff in Boolean logic 
 and $w$ is satisfiable\}.  Describe in clear English the operation of a nondeterministic (and possibly $n$-tape) Turing 
 machine that decides SAT.
-\begin{proof}[Solution]
+\begin{proof}[Solution]$ $\\
+\begin{enumerate}[1.]
+\item
+Simplyify it as much as you can.  If the result is $true$, halt and accept.  If it's $false$, halt and reject.
+
+\item
+Pick the first remaining predicate $P$.  Nondeterministically replace all instances of $P$ with either $true$ or $false$.
+
+\item
+repeat
+\end{enumerate}
 \end{proof}
 
 % ---
@@ -78,6 +91,7 @@ machine that decides SAT.
 \item
 What is the minimum number of tapes required to implement a universal Turing machine?
 \begin{proof}[Solution]
+Three.
 \end{proof}
 
 % ---
