@@ -1,0 +1,108 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsfonts, amsthm, amsmath, fullpage, tikz, wrapfig, enumerate}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
+\newcommand{\images}{/home/gparker/classes/341/images}
+
+\begin{document}
+\begin{center}
+\textbf{
+CS 341 Automata Theory \\
+Elaine Rich \\
+Homework 12 \\
+Due: Tuesday, April 10}\\
+\end{center}
+\noindent
+This assignment covers Chapter 20.\\
+
+\begin{enumerate}[1)]
+
+% ---
+% 1
+% ---
+
+\item
+* Let $L_1, L_2, \ldots , L_k$ be a collection of languages over some alphabet $\Sigma$ such that:
+\begin{itemize}
+\item
+For all $i \neq j$, $L_i \cap L_j = \emptyset$.
+\item
+$L_1 \cup L_2 \cup \dots \cup L_k = \Sigma ^*$.
+\item
+$\forall i$ ($L_i$ is in SD).
+\end{itemize}
+Prove that each of the languages $L_1$ through $L_k$ is in $D$.
+\begin{proof}[Proof]
+\end{proof}
+
+%---
+% 2
+%---
+
+\item
+If $L_1$ and $L_3$ are in D and $L_1 \subseteq L_2 \subseteq L_3$, what can we say about whether $L_2$ is in D?
+\begin{proof}[Answer]
+\end{proof}
+
+% ---
+% 3
+% ---
+
+\item
+Let $M$ be a Turing machine that lexicographically enumerates the language $L$. Prove that there exists a Turing
+machine $M'$ that decides $L^R$.
+\begin{proof}[Proof]
+\end{proof}
+
+
+% ---
+% 4
+% ---
+
+\item
+Construct a standard one-tape Turing machine $M$ to enumerate the language $A^nB^n$. Assume that $M$ starts with
+its tape equal to $\square$. Also assume the existence of the printing subroutine $P$, defined in Section 20.5.1.
+\begin{proof}[Solution]
+\end{proof}
+
+
+% ---
+% 5
+% ---
+
+\item
+Recall the function $mix$, defined in Example 8.23. Neither the regular languages nor the context-free languages
+are closed under $mix$. Are the decidable languages closed under $mix$? Prove your answer.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
+
+
+% ---
+% 6
+% ---
+
+\item
+Let $\Sigma = \{a, b\}$. Consider the set of all languages over $\Sigma$ that contain only even length strings.
+\begin{enumerate}[a)]
+%a
+\item
+How many such languages are there?
+\begin{proof}[Answer]
+\end{proof}
+
+
+%b
+\item
+How many of them are semidecidable?
+\begin{proof}[Answer]
+\end{proof}
+\end{enumerate}
+\end{enumerate}
+\end{document}
