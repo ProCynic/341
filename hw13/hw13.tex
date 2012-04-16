@@ -90,14 +90,17 @@ In this problem, we consider the relationship between $H$ and a very simple lang
 \item
 Show that $\{\texttt{a}\}$ is \emph{mapping} reducible to $H$.  
 \begin{proof}[Solution]
+Construct a turing machine $M$ which halts and accepts if the square to the right of the read head is an \texttt{a} and otherwise loops.  The problem of recognizing $\{\texttt{a}\}$ is now equivalent to the problem of deciding whether $M$ halts.
 \end{proof}
 
 %b
 \item
 Is it possible to reduce $H$ to $\{\texttt{a}\}$?  Prove your answer.
 \begin{proof}[Answer]
+No.
 \end{proof}
 \begin{proof}[Proof]
+We know that $\{\texttt{a}\}$ is a regular language, and is thus decidable.  So if there were a way to reduce $H$ to $\{\texttt{a}\}$, then $H$ would be decidable.  However we know that $H$ is not decidable, so such a reduction must not exist.
 \end{proof}
 \end{enumerate}
 
@@ -108,6 +111,22 @@ Is it possible to reduce $H$ to $\{\texttt{a}\}$?  Prove your answer.
 \item
 Show that $H_{ALL}$ is not in $D$ by reduction from $H$.
 \begin{proof}[Solution]
+Assume by way of contradiction that a Turing Machine $Oracle$ that decided $H_{ALL}$ existed.  Now define a reduction $R(\brackets{M, w})$ which constructs a description of a  new machine $M\#$ that does the following:
+\begin{enumerate}[1.]
+%1.
+\item
+Erases its input tape.
+
+%2.
+\item
+Writes $w$ onto the tape.
+
+%3.
+\item
+Passes control to $M$.
+\end{enumerate}
+
+Now when $M(w)$ halts $Oracle(R(\brackets{M, w}))$ accepts and when $M(w)$ does not halt $Oracle(R(\brackets{M, w}))$ rejects.
 \end{proof}
 
 
@@ -123,14 +142,40 @@ For each of the following languages $L$, state whether or not it is in $D$.  Pro
 \item
 $\{\brackets{M}\ :\ \texttt{ab} \in L(M)\}$.
 \begin{proof}[Answer]
+No.
 \end{proof}
 \begin{proof}[Proof]
+Define $R(\brackets{M, w})$, a mapping reduction from $H$ to this language as follows:
+\begin{enumerate}[1.]
+\item
+Construct the description $\brackets{M\#}$ of a new Turing machine $M\#$ that, on input $x$, operates as follows:
+\begin{enumerate}
+\item[1.1]
+Erase the tape.
+
+\item[1.2]
+Write $w$ on the tape.
+
+\item[1.3]
+Run $M$ on $w$.
+
+\item[1.4]
+Accept.
+\end{enumerate}
+
+\item
+Return $\brackets{M\#, w}$.
+\end{enumerate}
+If there were a machine to decide this language, call it $Oracle$ then $C = Oracle(R(\brackets{M, w}))$ would decide $H$.\\
+If $\brackets{M, w} \in H$:  $M$ halts on $w$, so $M\#$ accepts everything.  In particular, it accepts \texttt{ab}.  $Oracle(\brackets{M\#})$ accepts.\\
+If $\brackets{M, w} \not \in H$:  $M$ halts on $w$, so $M\#$ does not halt on any input.  In particular, it does not halt on \texttt{ab}.  $Oracle(\brackets{M\#})$ rejects.
 \end{proof}
 
 %b
 \item
 $\{\brackets{M, w}$ : TM $M$, on input $w$, begins by moving right one square onto $w$.  Then it never moves off $w$\}.
 \begin{proof}[Answer]
+No.
 \end{proof}
 \begin{proof}[Proof]
 \end{proof}
@@ -139,8 +184,31 @@ $\{\brackets{M, w}$ : TM $M$, on input $w$, begins by moving right one square on
 \item
 $\{\brackets{M}$ : there exists a string $w$ such that $\card{w} < \card{\brackets{M}}$ and that $M$ accepts $w$\}.
 \begin{proof}[Answer]
+No.
 \end{proof}
 \begin{proof}[Proof]
+Let $R$ be a mapping reduction from $H$ to this language as follows:\\
+$R(\brackets{M, w}) = $\\
+\begin{enumerate}[1.]
+\item
+Construct the description $\brackets\{M\#\}$ of a new Turine machine $M\#(x)$ that, on input $x$, operates as follows:
+\begin{enumerate}
+\item[1.1]
+Erase the tape.
+\item[1.2]
+Write $w$ to the tape.
+\item[1.3]
+Run $M$ on $w$
+\item[1.4]
+Accept.
+\end{enumerate}
+\item
+Return $\brackets{M\#}$.
+\end{enumerate}
+Assume by way of contradiction that there exists a machine to decide this language, call it $Oracle$.
+If $\brackets{M, w} \in H$: then $M\#$ will accept on all input, including $\epsilon$.  So there exists at least one string with length less than $\brackets{M}$ on which $M\#$ accepts.  $Oracle$ accepts.\\
+If $\brackets{M, w} \not \in H$: then $M\#$ will not halt, and thus not accept, on all input.  So there does not exists at least one string with length less than $\brackets{M}$ on which $M\#$ accepts.  $Oracle$ rejects.\\
+Therefore $Oracle(R(\brackets{M, w}))$ decides $H$.  However we know that no such machine exists, so $Oracle$ must not exist.
 \end{proof}
 \end{enumerate}
 
