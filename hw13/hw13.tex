@@ -38,12 +38,42 @@ In Appendix E.3, we describe a straightforward use of reduction that solves a gr
 \item
 Show the graph that corresponds to $G$.
 \begin{proof}[Solution]
+\begin{align*}
+G' &= \{V, E\}\\
+V &= \{A, B, C, D, 1, 2, 3, 4\}\\
+E &= \{(A, 3), (A, 4), (B, 1), (B, 3), (B, 4), (C, 4), (D, 2)\}
+\end{align*}
 \end{proof}
 
 %b
 \item
 Use the graph algorithm we describe to find a coloring of $G$.
 \begin{proof}[Solution]
+Start with $B$ and color each edge alternately.
+\begin{align*}
+Red &= \{(B, 1), (B, 4)\}\\
+Blue &= \{(B, 3)\}
+\end{align*}
+Now do vertex $3$:
+\begin{align*}
+Red &= \{(B, 1), (B, 4), (A, 3)\}\\
+Blue &= \{(B, 3)\}
+\end{align*}
+Now vertex $A$:
+\begin{align*}
+Red &= \{(B, 1), (B, 4), (A, 3)\}\\
+Blue &= \{(B, 3), (A, 4)\}
+\end{align*}
+Now vertex $4$: (it has one of each already, so pick arbitrarily.)
+\begin{align*}
+Red &= \{(B, 1), (B, 4), (A, 3)\}\\
+Blue &= \{(B, 3), (A, 4), (C, 4)\}
+\end{align*}
+And now the last edge:
+\begin{align*}
+Red &= \{(B, 1), (B, 4), (A, 3), (D, 2)\}\\
+Blue &= \{(B, 3), (A, 4), (C, 4)\}
+\end{align*}
 \end{proof}
 \end{enumerate}
 
