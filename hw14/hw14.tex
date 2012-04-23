@@ -1,0 +1,89 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsfonts, amsthm, amsmath, fullpage, tikz, wrapfig, enumerate}
+
+\newcommand{\card}[1]{\left| #1 \right|}
+\newcommand{\brackets}[1]{\left< #1 \right>}
+\newcommand{\nat}{\mathbb{N}}
+\newcommand{\ints}{\mathbb{Z}}
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
+
+\begin{document}
+\begin{center}
+\textbf{
+CS 341 Automata Theory \\
+Elaine Rich \\
+Homework 14 \\
+Due: Tuesday, April 23}\\
+\end{center}
+
+\noindent
+This assignment covers Sections 21.5 - 21.7\\
+
+\noindent
+Note: We have skipped Rice's Theorem. So problems 4 - 5 are here just in case you're interested in learning about it. They are optional.
+
+\begin{enumerate}[1)]
+
+% ---
+% 1
+% ---
+
+\item
+For each of the following languages $L$, state whether it is in D, SD/D or not SD. Prove your answer. Do not use Rice's Theorem. If you claim that $L$ is not in SD, first prove that it's not in D (for practice), then prove that it's not in SD. Assume that any input of the form $\brackets{M}$ is a description of a Turing machine.
+
+\begin{enumerate}[a)]
+
+%a
+\item
+$\{\brackets{M}$ : TM $M$ accepts exactly two strings and they are of different lengths\}.
+
+%b
+\item
+$\{\brackets{M, x, y}$ : $M$ accepts \texttt{xy}\}.
+
+%c
+\item
+$\{\brackets{M}$ : Turing machine $M$ accepts all even length strings\}.
+
+%d
+\item
+$\{\brackets{M}$ : $M$ rejects exactly three strings that start with \texttt{a}\}
+
+%e
+\item
+$\{\brackets{M_a, M_b}$ : $L(M_a) - L(M_b) = \emptyset$\}.
+\end{enumerate}
+
+
+%---
+% 2
+%---
+
+\item
+Prove that $\mathrm{TM_{REG}}$ is not in SD.
+
+% ---
+% 3
+% ---
+
+\item
+For any nonempty alphabet $\Sigma$, let $L$ be any decidable language other than $\emptyset$ or $\Sigma ^*$. Prove that $L \leq _M \lnot L$.
+
+
+% ---
+% 4
+% ---
+
+\item
+* Do the other half of the proof of Rice's Theorem, i.e., show that the theorem holds if $P(\emptyset) = True$. (Hint: use a reduction that is not a mapping reduction.)
+
+% ---
+% 5
+% ---
+
+\item
+* Use Rice's Theorem to prove that \{$\brackets{M}$ : Turing machine $M$ accepts at least two odd length strings\} is not in D.
+\end{enumerate}
+\end{document}
