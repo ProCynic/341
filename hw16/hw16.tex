@@ -10,13 +10,13 @@
 \newcommand{\chtitle}[1]{\noindent \vspace{5mm}\textbf{Chapter #1}\vspace{3mm}}
 
 \begin{document}
-\begin{center}
-\textbf{
+\begin{flushleft}
+\textbf{\noindent
+STUDENT NAME - EID\\
 CS 341 Automata Theory \\
-Elaine Rich \\
 Homework 16 \\
 Due Friday, May 4 at 11:59 p.m.}\\
-\end{center}
+\end{flushleft}
 
 \noindent
 This assignment reviews Chapter 21 and covers Chapter 27 and part of Chapter 28.\\
@@ -34,10 +34,22 @@ in SD.  Assume that any input of the form $\brackets{M}$ is a description of a T
 \begin{enumerate}[a)]
 \item
 \{$\brackets{M}$ : $L(M)$ contains at least two strings\}.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
 \item
 \{$\brackets{M}$ : $M$ is the only Turing machine that accepts $L(M)$\}.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
 \item
 \{$\brackets{M}$ : $\card{L(M)}$ is a prime integer $> 0$\}.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
 \end{enumerate}
 
 %---
@@ -58,6 +70,10 @@ For whatever reason (malevolence or incompetence), it turns out that $Oops$ has 
 For this problem, we’ll say that two TMs are equivalent iff they compute the same function (i.e., they halt on the same inputs and, when they halt, they output the same value).\\
 
 Define $L = \{\brackets{M}$ : $M$ is equivalent to $Oops$\}.  Is $L$ in D, SD/D or $\lnot$SD?  Prove your answer.
+\begin{proof}[Answer]
+\end{proof}
+\begin{proof}[Proof]
+\end{proof}
 
 % ---
 % 3
@@ -78,6 +94,8 @@ $timereq(M) \in O(\frac{n^5}{50})$.
 \item
 * $timereq(M) \in \Theta(n^6)$.
 \end{enumerate}
+\begin{proof}[Answer]
+\end{proof}
 
 \item
 Suppose that $timereq(M) = 5^n \cdot 3n^3$.  Circle all of the following statements that are true:
@@ -89,6 +107,8 @@ $timereq(M) \in O(2^n)$.
 \item
 $timereq(M) \in O(n!)$.
 \end{enumerate}
+\begin{proof}[Answer]
+\end{proof}
 \end{enumerate}
 
 % ---
@@ -100,11 +120,14 @@ $timereq(M) \in O(n!)$.
 \begin{enumerate}[a)]
 \item
 Analyze $timereq(M)$.
+\begin{proof}[Answer]
+\end{proof}
 \item
 Is W\texttt{c}W in P?  Why (or why do you think it’s not)?
+\begin{proof}[Answer]
+\end{proof}
 \end{enumerate}
 
-\pagebreak
 % ---
 % 5
 % ---
@@ -114,10 +137,16 @@ Assume a computer that executes $10^{10}$ operations/second.  Make the simplifyi
 \begin{enumerate}[a)]
 \item
 $timereq(P) = 5243n+649$.
+\begin{proof}[Answer]
+\end{proof}
 \item
 * $timereq(P) = 5n^2$.
+\begin{proof}[Answer]
+\end{proof}
 \item
 * $timereq(P) = 5^n$.
+\begin{proof}[Answer]
+\end{proof}
 \end{enumerate}
 
 
@@ -143,6 +172,8 @@ $timereq(P) = 5243n+649$.
   \hline
 \end{tabular}
 \end{center}
+\begin{proof}[Answer]
+\end{proof}
 
 % ---
 % 7
@@ -150,6 +181,8 @@ $timereq(P) = 5243n+649$.
 
 \item
 Show that $L = \{\brackets{M}:\ M$ is a Turing machine and $timereq(M) \in O(n^2)\}$ is not in SD.
+\begin{proof}[Proof]
+\end{proof}
 
 % ---
 % 8
@@ -167,6 +200,8 @@ shown above) and cross every bridge exactly once along the way.  But he wants to
 who lives on the other river bank, is unable to cross every bridge exactly once on his way home from the pub.  The
 good prince is willing to invest in building one new bridge in order to make his goal achievable.  Where should he
 build his bridge?
+\begin{proof}[Answer]
+\end{proof}
 
 % ---
 % 9
@@ -178,8 +213,12 @@ circuit\}.
 \begin{enumerate}[a)]
 \item
 Show an example of a connected graph with 8 vertices that is in NONEULERIAN.
+\begin{proof}[Answer]
+\end{proof}
 \item
 Prove that NONEULERIAN is in P.
+\begin{proof}[Proof]
+\end{proof}
 \end{enumerate}
 
 % ---
@@ -190,6 +229,8 @@ Prove that NONEULERIAN is in P.
 In Chapter 9, we showed that all of the questions that we posed about regular languages are decidable.  It is shown,
 in Section 29.3.3, that while decidable, some straightforward questions about the regular languages appear to be
 hard.  Some are easy however.  Show that FSM-EMPTY = \{$\brackets{M}$ : $M$ is a FSM and $L(M) = \emptyset$\} is in P.
+\begin{proof}[Proof]
+\end{proof}
 
 % ---
 % 11
@@ -198,6 +239,8 @@ hard.  Some are easy however.  Show that FSM-EMPTY = \{$\brackets{M}$ : $M$ is a
 \item
 * Show that SUBSET-SUM = \{$\brackets{S, k}$ : $S$ is a multiset (i.e., duplicates are allowed) of integers, $k$ is an integer, and
 there exists some subset of $S$ whose elements sum to $k$\} is in NP.
+\begin{proof}[Proof]
+\end{proof}
 
 % ---
 % 12
@@ -214,9 +257,13 @@ Then a $2 \times 2$ grid can be tiled as:\\
 \end{center}
 \begin{enumerate}[a)]
 \item
-Formulate this problem as a language, FINITE-TILES.
+Formulate this problem as a language, FINITE-TILES
+\begin{proof}[Solution]
+\end{proof}
 \item
 Show that FINITE-TILES is in NP.
+\begin{proof}[Proof]
+\end{proof}
 \end{enumerate}
 \end{enumerate}
 \end{document}
