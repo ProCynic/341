@@ -12,7 +12,7 @@
 \begin{document}
 \begin{flushleft}
 \textbf{\noindent
-STUDENT NAME - EID\\
+Geoffrey Parker - grp352\\
 CS 341 Automata Theory \\
 Homework 16 \\
 Due Friday, May 4 at 11:59 p.m.}\\
@@ -35,20 +35,56 @@ in SD.  Assume that any input of the form $\brackets{M}$ is a description of a T
 \item
 \{$\brackets{M}$ : $L(M)$ contains at least two strings\}.
 \begin{proof}[Answer]
+SD/D
 \end{proof}
 \begin{proof}[Proof]
+Assume by way of contradiction that this language is decidable.  Then there exists some machine $Oracle(\brackets{M})$ which decides it.  Let $R$ be a reduction from $\brackets{M, w}$ to $\brackets{M\#}$ as follows:
+\begin{enumerate}[1.]
+\item
+Erase the tape.
+\item
+Write $w$ on the tape.
+\item
+Run $M$ on $w$.
+\item
+Accept.
+\end{enumerate}
+Then let $C(\brackets{M, w}) = Oracle(R(\brackets{M, w}))$.\\
+If $\brackets{M, w} \in H$: $M\#$ accepts everything, so $Oracle$ accepts.\\
+If $\brackets{M, w} \not \in H$: $M\#$ accepts nothing, so $Oracle$ rejects.\\
+Therefore $C$ decides H, and we know that no such machine exists, so we have a contradiction.  Therefore this language is not decidable.
 \end{proof}
 \item
 \{$\brackets{M}$ : $M$ is the only Turing machine that accepts $L(M)$\}.
 \begin{proof}[Answer]
+Decidable.
 \end{proof}
 \begin{proof}[Proof]
+Let $M\#$ be a machine that runs $M$ on the universal turing machine.  Then $L(M\#) = L(M)$.  Therefore this language is the empty set, which is decidable.
 \end{proof}
 \item
 \{$\brackets{M}$ : $\card{L(M)}$ is a prime integer $> 0$\}.
 \begin{proof}[Answer]
+$\lnot$SD.
 \end{proof}
 \begin{proof}[Proof]
+Assume by way of contradiction that this language is semi-decidable.  Then there exists some machine $Oracle(\brackets{M})$ which semi-decides it.  Let $R$ be a reduction from $\brackets{M, w}$ to $\brackets{M\#}$ as follows:
+\begin{enumerate}[1.]
+\item
+If $x$ is \texttt{a} or \texttt{b} accept.
+\item
+Erase the tape.
+\item
+Write $w$ on the tape.
+\item
+Run $M$ on $w$.
+\item
+Accept.
+\end{enumerate}
+Then let $C(\brackets{M, w}) = Oracle(R(\brackets{M, w}))$.\\
+If $\brackets{M, w} \in \lnot H$: $M\#$ accepts exactly two strings, and two is a prime integer, so $Oracle$ accepts.\\
+If $\brackets{M, w} \not \in \lnot H$: $M\#$ accepts everything, and infinity is not a prime integer,  so $Oracle$ rejects.\\
+Therefore $C$ decides $\lnot$H, and we know that no such machine exists, so we have a contradiction.  Therefore this language is not decidable.
 \end{proof}
 \end{enumerate}
 
