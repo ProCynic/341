@@ -107,8 +107,28 @@ For this problem, we’ll say that two TMs are equivalent iff they compute the s
 
 Define $L = \{\brackets{M}$ : $M$ is equivalent to $Oops$\}.  Is $L$ in D, SD/D or $\lnot$SD?  Prove your answer.
 \begin{proof}[Answer]
+$\lnot$SD.
 \end{proof}
 \begin{proof}[Proof]
+Assume by way of contradiction that this language $L$ is semi-decidable.  Then there exists some machine $Oracle(\brackets{M})$ which semi-decides it.  Let $R$ be a reduction from $\brackets{M, w}$ to $\brackets{M\#}$ as follows:
+\begin{enumerate}[1.]
+\item
+Write $x$ to a second tape.
+\item
+Erase the tape.
+\item
+Write $w$ on the tape.
+\item
+Run $M$ on $w$ for $\card{x}$ steps.
+\item
+If $M$ halted naturally, loop
+\item
+Output \texttt{F}
+\end{enumerate}
+Then let $C(\brackets{M, w}) = Oracle(R(\brackets{M, w}))$.\\
+If $\brackets{M, w} \in \lnot H$: $M$ never halts naturally, so $M\#$ outputs \texttt{F}, making it equivalent to $oops$, so $Oracle$ accepts.\\
+If $\brackets{M, w} \not \in \lnot H$: there are some inputs $x$ to $M\#$ on which $M$ halts natually, so on these inputs $M\#$ does not output \texttt{F}, so $Oracle$ rejects.\\
+Therefore $C$ decides $\lnot$H, and we know that no such machine exists, so we have a contradiction.  Therefore this language is not decidable.
 \end{proof}
 
 % ---
@@ -120,7 +140,7 @@ Let $M$ be an arbitrary Turing machine.
 \begin{enumerate}[a)]
 \item
 Suppose that $timereq(M) = 3n^3(n+5)(n-4)$.  Circle all of the following statements that are true:
-\begin{enumerate}[i]
+\begin{enumerate}[i)]
 \item
 $timereq(M) \in O(n)$.
 \item
@@ -131,6 +151,7 @@ $timereq(M) \in O(\frac{n^5}{50})$.
 * $timereq(M) \in \Theta(n^6)$.
 \end{enumerate}
 \begin{proof}[Answer]
+ii and iii
 \end{proof}
 
 \item
@@ -144,6 +165,7 @@ $timereq(M) \in O(2^n)$.
 $timereq(M) \in O(n!)$.
 \end{enumerate}
 \begin{proof}[Answer]
+iii
 \end{proof}
 \end{enumerate}
 
@@ -174,14 +196,17 @@ Assume a computer that executes $10^{10}$ operations/second.  Make the simplifyi
 \item
 $timereq(P) = 5243n+649$.
 \begin{proof}[Answer]
+1,153,538,050,734
 \end{proof}
 \item
 * $timereq(P) = 5n^2$.
 \begin{proof}[Answer]
+34,779,304
 \end{proof}
 \item
 * $timereq(P) = 5^n$.
 \begin{proof}[Answer]
+22
 \end{proof}
 \end{enumerate}
 
@@ -211,6 +236,7 @@ $timereq(P) = 5243n+649$.
 \begin{proof}[Answer]
 \end{proof}
 
+\pagebreak
 % ---
 % 7
 % ---
@@ -218,6 +244,23 @@ $timereq(P) = 5243n+649$.
 \item
 Show that $L = \{\brackets{M}:\ M$ is a Turing machine and $timereq(M) \in O(n^2)\}$ is not in SD.
 \begin{proof}[Proof]
+Assume by way of contradiction that this language $L$ is semi-decidable.  Then there exists some machine $Oracle(\brackets{M})$ which semi-decides it.  Let $R$ be a reduction from $\brackets{M, w}$ to $\brackets{M\#}$ as follows:
+\begin{enumerate}[1.]
+\item
+Write $x$ to a second tape.
+\item
+Erase the tape.
+\item
+Write $w$ on the tape.
+\item
+Run $M$ on $w$ for $\card{x}$ steps.
+\item
+If $M$ halted naturally, loop
+\end{enumerate}
+Then let $C(\brackets{M, w}) = Oracle(R(\brackets{M, w}))$.\\
+If $\brackets{M, w} \in \lnot H$: $M$ never halts naturally, so $M\#$ halts in $O(n)$ and therefore $O(n^2)$, so $Oracle$ accepts.\\
+If $\brackets{M, w} \not \in \lnot H$: there are some inputs $x$ to $M\#$ on which $M$ halts natually, so on these inputs $M\#$ never halts, so $Oracle$ rejects.\\
+Therefore $C$ decides $\lnot$H, and we know that no such machine exists, so we have a contradiction.  Therefore this language is not decidable.
 \end{proof}
 
 % ---
@@ -237,8 +280,14 @@ who lives on the other river bank, is unable to cross every bridge exactly once 
 good prince is willing to invest in building one new bridge in order to make his goal achievable.  Where should he
 build his bridge?
 \begin{proof}[Answer]
+From the book:
+\begin{quote}
+A connected graph posseses an Eulerian path that is not a circuit iff it contains exactly two verticies of odd degree.  Those two verticies will serve as the first and last verticies of the path.
+\end{quote}
+Therefore he should build another bridge between the western island and the south shore, leaving only the pub island and the north shore as verticies with odd degree.
 \end{proof}
 
+\pagebreak
 % ---
 % 9
 % ---
@@ -250,10 +299,12 @@ circuit\}.
 \item
 Show an example of a connected graph with 8 vertices that is in NONEULERIAN.
 \begin{proof}[Answer]
+8 verticies, no edges.
 \end{proof}
 \item
 Prove that NONEULERIAN is in P.
 \begin{proof}[Proof]
+All you have to do is check the degree of each node, so this is $O(n)$.
 \end{proof}
 \end{enumerate}
 
@@ -264,8 +315,9 @@ Prove that NONEULERIAN is in P.
 \item
 In Chapter 9, we showed that all of the questions that we posed about regular languages are decidable.  It is shown,
 in Section 29.3.3, that while decidable, some straightforward questions about the regular languages appear to be
-hard.  Some are easy however.  Show that FSM-EMPTY = \{$\brackets{M}$ : $M$ is a FSM and $L(M) = \emptyset$\} is in P.
+hard.  Some are easy however.  Show that\\ FSM-EMPTY = \{$\brackets{M}$ : $M$ is a FSM and $L(M) = \emptyset$\} is in P.
 \begin{proof}[Proof]
+The algorith $emptyFSMgraph(M:\textrm{ FSM})$ in section 9.1.2 decides this in polynomial time.
 \end{proof}
 
 % ---
